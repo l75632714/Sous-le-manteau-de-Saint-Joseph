@@ -85,16 +85,266 @@
         <!-- Controls Header centrés (SVG vectoriels natifs Android) -->
         <div class="flex items-center justify-center gap-3">
           
-          <!-- Bouton Colombe / Ambiance (SVG Vectoriel Lisible) -->
+          <!-- Bouton Colombe / Ambiance -->
           <button id="dove-btn" onclick="toggleDoveSound()" title="Ambiance de la Colombe" class="p-3 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-600/60 transition cursor-pointer flex items-center justify-center group active:scale-95">
             <svg class="w-6 h-6 text-slate-200 group-hover:text-amber-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <!-- Silhouette stylisée et lisible d'une colombe en vol -->
               <path d="M12 4.5c-2 0-3.8.8-5 2.2C5.5 5.2 3.5 4.5 1.5 5c2 2 3 4.5 3 7.5 0 3 2.5 5 5 5h1c.5 2 2 3.5 4 3.5s3.5-1.5 3.5-3.5c0-.5-.1-1-.3-1.5 2-.5 3.8-2 4.8-4C20 12 16 12 12 4.5z"/>
-              <!-- Rameau d'olivier -->
               <path d="M4.5 12.5c-1-1-2.5-1.5-3.5-1"/>
             </svg>
           </button>
 
-          <!-- Bouton Lumière Apaisante (SVG Rayons & Halo) -->
-          <button id="light-btn" onclick="toggleSoothingLight()" title="Lumière apaisante" class="p-3 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-600/60 transition cursor-pointer flex items
+          <!-- Bouton Lumière Apaisante -->
+          <button id="light-btn" onclick="toggleSoothingLight()" title="Lumière apaisante" class="p-3 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-600/60 transition cursor-pointer flex items-center justify-center group active:scale-95">
+            <svg class="w-6 h-6 text-slate-200 group-hover:text-amber-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v2"/>
+              <path d="M12 20v2"/>
+              <path d="m4.93 4.93 1.41 1.41"/>
+              <path d="m17.66 17.66 1.41 1.41"/>
+              <path d="M2 12h2"/>
+              <path d="M20 12h2"/>
+              <path d="m6.34 17.66-1.41 1.41"/>
+              <path d="m19.07 4.93-1.41 1.41"/>
+            </svg>
+          </button>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- Layout Principal : Menu Neuvaine à gauche (verrouillé), Contenu à droite -->
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-8 flex-grow w-full flex flex-col md:flex-row gap-8 items-stretch">
+      
+      <!-- Panneau Latéral Gauche : Neuvaine (Verrouillé) -->
+      <aside class="w-full md:w-72 flex-shrink-0 flex flex-col">
+        <div id="neuvaine-panel" class="bg-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 sticky top-28 transition-colors duration-500 h-full flex flex-col justify-between">
+          <div>
+            <!-- Titre & Description parfaitement centrés -->
+            <div class="mb-6 border-b border-slate-100 pb-4 flex flex-col items-center text-center">
+              <h2 class="font-opensans-bold text-xl text-slate-900 text-royal mb-1">
+                Neuvaine
+              </h2>
+              <p class="text-xs text-slate-500 font-medium italic">
+                Suivez l'avancement de votre neuvaine.
+              </p>
+            </div>
+
+            <!-- Liste verticale fine des 9 jours -->
+            <div class="space-y-2.5">
+              <script>
+                for (let i = 1; i <= 9; i++) {
+                  document.write(`
+                    <label class="flex items-center justify-between p-3 rounded-xl border border-slate-100 bg-slate-50/60 hover:bg-amber-50/40 hover:border-amber-200/60 cursor-pointer transition group">
+                      <span class="text-sm font-medium text-slate-700 group-hover:text-slate-900">Jour ${i}</span>
+                      <input type="checkbox" class="w-4 h-4 accent-amber-600 rounded focus:ring-amber-500 cursor-pointer">
+                    </label>
+                  `);
+                }
+              </script>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Zone Principale : Saint Joseph -->
+      <main class="flex-grow w-full flex flex-col">
+        
+        <section id="main-section" class="bg-card bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-slate-200/80 transition-colors duration-500 relative flex flex-col justify-between h-full">
           
+          <div class="flex flex-col h-full justify-between">
+            <!-- Titre centré -->
+            <div class="flex flex-col items-center">
+              <h2 class="font-opensans-bold text-2xl md:text-4xl text-slate-900 text-royal mb-4 tracking-tight text-center">
+                Saint Joseph
+              </h2>
+            </div>
+
+            <!-- Conteneur de l'image -->
+            <div class="halo-container max-w-md mx-auto relative flex flex-col items-center w-full flex-grow justify-center">
+              
+              <div class="relative rounded-2xl overflow-hidden halo-effect border-2 border-amber-400/40 p-1 bg-slate-900 w-full flex justify-center h-full max-h-[580px]">
+                <img 
+                  src="https://noma.org/wp-content/uploads/2018/01/56-63-old.jpg" 
+                  alt="Saint-Joseph et l'Enfant-Jésus" 
+                  class="w-full h-full object-cover rounded-xl transition-transform duration-500"
+                />
+
+                <!-- Pastille interactive 1 (Jaune pure, sans émoji et sans contour) -->
+                <button onclick="openModal('dates')" title="Dates de l'année" class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-amber-500 hover:bg-amber-400 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
+                  <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Dates & Prières</span>
+                </button>
+
+                <!-- Pastille interactive 2 (Bleue pure, sans émoji et sans contour) -->
+                <button onclick="openModal('titles')" title="Titres de Saint-Joseph" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-blue-600 hover:bg-blue-500 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
+                  <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Titres de Saint-Joseph</span>
+                </button>
+              </div>
+              
+              <p class="text-[11px] text-slate-400 mt-2 italic text-center">
+                Source : Object Lesson: St. Joseph and the Christ Child — NOMA
+              </p>
+            </div>
+          </div>
+
+          <!-- Modale / Panneau Superposé au clic sur les pastilles -->
+          <div id="interactive-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 backdrop-blur-sm p-4">
+            <div class="bg-white rounded-2xl max-w-2xl w-full p-6 md:p-8 shadow-2xl border border-amber-200 relative animate-in fade-in zoom-in duration-200">
+              
+              <!-- Bouton de fermeture -->
+              <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-2 rounded-lg text-lg font-bold">
+                ✕
+              </button>
+
+              <h3 class="font-opensans-bold text-2xl text-center text-slate-900 mb-6">
+                Saint Joseph
+              </h3>
+
+              <!-- Contenu dynamique interactif sans menus déroulants -->
+              <div id="modal-content" class="space-y-4">
+                <!-- Rempli dynamiquement par JS -->
+              </div>
+
+            </div>
+          </div>
+
+        </section>
+
+      </main>
+
+    </div>
+
+    <!-- Pied de Page Épuré - Centré -->
+    <footer class="w-full text-center py-6 text-xs text-slate-400 border-t border-slate-200/60 bg-white">
+      <small>&copy; 2026 Sous le manteau de Saint Joseph. Tous droits réservés.</small>
+    </footer>
+
+  </div>
+
+  <!-- Audio API -->
+  <script>
+    let audioCtx = null;
+    let isPlayingDove = false;
+    let melodyInterval = null;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    function toggleDoveSound() {
+      initAudio();
+      if (isPlayingDove) {
+        stopDoveSound();
+      } else {
+        startDoveSound();
+      }
+    }
+
+    function startDoveSound() {
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      
+      isPlayingDove = true;
+      document.getElementById('dove-btn').classList.add('bg-amber-600', 'ring-2', 'ring-amber-300');
+
+      playPureNote();
+      melodyInterval = setInterval(() => {
+        if (isPlayingDove) {
+          playPureNote();
+        }
+      }, 4000);
+    }
+
+    function playPureNote() {
+      if (!audioCtx || !isPlayingDove) return;
+
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      const notes = [523.25, 659.25, 783.99, 880.00, 1046.50];
+      const randomFreq = notes[Math.floor(Math.random() * notes.length)];
+
+      osc.type = 'sine';
+      const now = audioCtx.currentTime;
+      
+      osc.frequency.setValueAtTime(randomFreq, now);
+
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(0.03, now + 0.3);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 3.0);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start(now);
+      osc.stop(now + 3.0);
+    }
+
+    function stopDoveSound() {
+      isPlayingDove = false;
+      if (melodyInterval) {
+        clearInterval(melodyInterval);
+      }
+      document.getElementById('dove-btn').classList.remove('bg-amber-600', 'ring-2', 'ring-amber-300');
+    }
+
+    function toggleSoothingLight() {
+      document.body.classList.toggle('soothing-mode');
+    }
+
+    function openModal(type) {
+      const modal = document.getElementById('interactive-modal');
+      const content = document.getElementById('modal-content');
+      
+      if (type === 'dates') {
+        content.innerHTML = `
+          <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Dates & Prières de l'année</h4>
+          <div class="space-y-3">
+            <button onclick="alert('Chargement de la prière du 19 Mars')" class="w-full text-left p-4 rounded-xl bg-slate-50 hover:bg-amber-50 border border-slate-200/80 transition flex items-center justify-between group">
+              <div>
+                <span class="block text-xs font-bold text-amber-600 uppercase mb-0.5">19 Mars</span>
+                <span class="text-sm font-semibold text-slate-800 group-hover:text-amber-900">Ave Joseph & Méditation</span>
+              </div>
+              <span class="text-xs font-bold text-amber-600">Lire →</span>
+            </button>
+            <button onclick="alert('Chargement de la prière du 1er Mai')" class="w-full text-left p-4 rounded-xl bg-slate-50 hover:bg-amber-50 border border-slate-200/80 transition flex items-center justify-between group">
+              <div>
+                <span class="block text-xs font-bold text-amber-600 uppercase mb-0.5">1er Mai</span>
+                <span class="text-sm font-semibold text-slate-800 group-hover:text-amber-900">Prière du Travailleur</span>
+              </div>
+              <span class="text-xs font-bold text-amber-600">Lire →</span>
+            </button>
+          </div>
+        `;
+      } else if (type === 'titles') {
+        content.innerHTML = `
+          <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Titres de Saint-Joseph</h4>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <button onclick="alert('Saint-Joseph le juste')" class="p-4 rounded-xl bg-slate-50 hover:bg-blue-50 border border-slate-200/80 text-left transition group">
+              <span class="block text-xs font-bold text-blue-600 uppercase mb-1">Juste</span>
+              <span class="text-sm font-semibold text-slate-800">Saint-Joseph le juste</span>
+            </button>
+            <button onclick="alert('Saint-Joseph travailleur')" class="p-4 rounded-xl bg-slate-50 hover:bg-blue-50 border border-slate-200/80 text-left transition group">
+              <span class="block text-xs font-bold text-blue-600 uppercase mb-1">Travail</span>
+              <span class="text-sm font-semibold text-slate-800">Saint-Joseph travailleur</span>
+            </button>
+            <button onclick="alert('Terreur des démons')" class="p-4 rounded-xl bg-slate-50 hover:bg-blue-50 border border-slate-200/80 text-left transition group">
+              <span class="block text-xs font-bold text-blue-600 uppercase mb-1">Protection</span>
+              <span class="text-sm font-semibold text-slate-800">Terreur des démons</span>
+            </button>
+          </div>
+        `;
+      }
+      
+      modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('interactive-modal');
+      modal.classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
