@@ -1,145 +1,55 @@
 <!DOCTYPE html>
-<html lang="fr" class="h-full">
+<html lang="fr" class="h-full bg-amber-50">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sous le manteau de Saint-Joseph</title>
-    <!-- Tailwind CSS pour un design moderne et élégant -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
-        
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-        
-        .title-font {
-            font-family: 'Cinzel', serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sous le manteau de Saint-Joseph</title>
 
-        /* Style Bois d'Acacia chaleureux */
-        .acacia-wood {
-            background-color: #59331f;
-            background-image: 
-                radial-gradient(ellipse at center, rgba(145, 85, 52, 0.3) 0%, rgba(40, 20, 10, 0.8) 100%),
-                repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0px, rgba(255, 255, 255, 0.02) 2px, transparent 2px, transparent 8px);
-            border-color: #8c5333;
-        }
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-        /* Halo lumineux doré autour de l'avatar */
-        .halo-glow {
-            box-shadow: 0 0 35px 8px rgba(245, 158, 11, 0.35);
-        }
+  <!-- Google Fonts: Lora Bold & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 
-        /* Sanctuaire Mode Apaisant (nuit ambrée) */
-        .sanctuary-mode {
-            background-color: #1c1410 !important;
-            color: #fde68a !important;
-        }
-    </style>
-</head>
-<body id="main-body" class="h-full bg-stone-950 text-stone-100 flex flex-col selection:bg-amber-500 selection:text-stone-950">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .font-lora-bold {
+      font-family: 'Lora', serif;
+      font-weight: 700;
+    }
+    
+    /* Lumière apaisante (Fond tamisé) */
+    .soothing-mode {
+      background-color: #1c1917 !important;
+      color: #f5f5f4 !important;
+    }
+    .soothing-mode .bg-card {
+      background-color: #292524 !important;
+      border-color: #44403c !important;
+      color: #f5f5f4 !important;
+    }
+    .soothing-mode .text-muted {
+      color: #d6d3d1 !important;
+    }
+    .soothing-mode .header-bg {
+      background-color: #0c0a09 !important;
+      border-bottom-color: #292524 !important;
+    }
 
-    <!-- En-tête de l'application -->
-    <header class="acacia-wood border-b border-amber-800/40 px-6 py-4 flex items-center justify-between shadow-lg z-20">
-        <div class="flex items-center space-x-3">
-            <span class="text-2xl">⚜️</span>
-            <div>
-                <h1 class="title-font text-base md:text-lg font-bold text-amber-200 tracking-wide">Sous le manteau de Saint-Joseph</h1>
-                <p class="text-[11px] text-amber-100/75 italic">Sanctuaire de prière et de recueillement</p>
-            </div>
-        </div>
-        
-        <div class="flex items-center space-x-2">
-            <!-- Bouton Lumière Apaisante (Sanctuaire) -->
-            <button onclick="basculerModeSanctuaire()" id="sanctuary-btn" class="bg-stone-900/60 hover:bg-stone-900 border border-amber-500/30 text-amber-300 text-xs px-3 py-1.5 rounded-xl transition shadow flex items-center space-x-1.5">
-                <span>🕯️</span> <span class="hidden sm:inline">Lumière Apaisante</span>
-            </button>
-
-            <!-- Bouton Ambiance Sonore -->
-            <button onclick="basculerSon()" id="sound-btn" class="bg-stone-900/60 hover:bg-stone-900 border border-amber-500/30 text-amber-300 text-xs px-3 py-1.5 rounded-xl transition shadow flex items-center space-x-1.5">
-                <span>🔔</span> <span id="sound-status">Son : Off</span>
-            </button>
-        </div>
-    </header>
-
-    <!-- Contenu Principal -->
-    <main class="flex-1 flex flex-col lg:flex-row overflow-hidden">
-        
-        <!-- Panneau Gauche : Neuvaine & Cartes Historiques -->
-        <div class="w-full lg:w-80 acacia-wood border-r border-amber-900/30 p-5 flex flex-col space-y-5 overflow-y-auto z-10 shadow-xl">
-            
-            <!-- Module Neuvaine Interactive (9 jours) -->
-            <div class="bg-stone-900/80 border border-amber-600/30 rounded-2xl p-4 shadow-inner">
-                <div class="flex justify-between items-center mb-3">
-                    <h3 class="title-font text-xs font-bold text-amber-300 uppercase tracking-wider">Neuvaine Interactive</h3>
-                    <span id="neuvaine-counter" class="text-[10px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full font-semibold">0 / 9 jours</span>
-                </div>
-                <p class="text-[11px] text-stone-300 mb-3 leading-relaxed">Cochez chaque jour votre moment de prière et d'offrande à Saint Joseph :</p>
-                
-                <!-- Grille des 9 jours -->
-                <div id="neuvaine-grid" class="grid grid-cols-3 gap-2">
-                    <button onclick="toggleJour(1)" id="j1" class="py-2 text-xs font-medium rounded-xl border border-stone-700 bg-stone-800 text-stone-300 hover:border-amber-500 transition">J1</button>
-                    <button onclick="toggleJour(2)" id="j2" class="py-2 text-xs font-medium rounded-xl border border-stone-700 bg-stone-800 text-stone-300 hover:border-amber-500 transition">J2</button>
-                    <button onclick="toggleJour(3)" id="j3" class="py-2 text-xs font-medium rounded-xl border border-stone-700 bg-stone-800 text-stone-300 hover:border-amber-500 transition">J3</button>
-                    <button onclick="toggleJour(4)" id="j4" class="py-2 text-xs font-medium rounded-xl border border-stone-700 bg-stone-800 text-stone-300 hover:border-amber-500 transition">J4</button>
-                    <button onclick="toggleJour(5)" id="j5" class="py-2 text-xs font-medium rounded-xl border border-stone-700 bg-stone-800 text-stone-300 hover:border-amber-500 transition">J5</button>
-                    <button onclick="toggleJour(6)" id="j6" class="py-2 text-xs font-medium rounded-xl border border-stone-700 bg-stone-800 text-stone-300 hover:border-amber-500 transition">J6</button>
-                    <button onclick="toggleJour(7)" id="j7" class="py-2 text-xs font-medium rounded-xl border border-stone-700 bg-stone-800 text-stone-300 hover:border-amber-500 transition">J7</button>
-                    <button onclick="toggleJour(8)" id="j8" class="py-2 text-xs font-medium rounded-xl border border-stone-700 bg-stone-800 text-stone-300 hover:border-amber-500 transition">J8</button>
-                    <button onclick="toggleJour(9)" id="j9" class="py-2 text-xs font-medium rounded-xl border border-stone-700 bg-stone-800 text-stone-300 hover:border-amber-500 transition">J9</button>
-                </div>
-            </div>
-
-            <!-- Section Cartes & Archéologie de Nazareth (Libre de droits) -->
-            <div class="bg-stone-900/80 border border-amber-600/30 rounded-2xl p-4 shadow-inner space-y-3">
-                <h3 class="title-font text-xs font-bold text-amber-300 uppercase tracking-wider">Nazareth Historique</h3>
-                <p class="text-[11px] text-stone-300 leading-relaxed">Sites archéologiques du Ier siècle sourcés (Wikimedia Commons - Domaine Public) :</p>
-                
-                <div class="space-y-2 text-xs">
-                    <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Excavations_Nazareth_Home_with_back_rooms_200704.JPG/800px-Excavations_Nazareth_Home_with_back_rooms_200704.JPG" target="_blank" class="block p-2 rounded-xl bg-stone-800/80 hover:bg-stone-800 border border-stone-700 text-amber-200 transition">
-                        🏛️ Fouilles de la Maison du Ier siècle
-                    </a>
-                    <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/IL-Nazareth-Grotte.jpg/800px-IL-Nazareth-Grotte.jpg" target="_blank" class="block p-2 rounded-xl bg-stone-800/80 hover:bg-stone-800 border border-stone-700 text-amber-200 transition">
-                        ⛪ Grotte de l'Annonciation
-                    </a>
-                    <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Fountain_of_Mary_Nazareth_19th_century.jpg/800px-Fountain_of_Mary_Nazareth_19th_century.jpg" target="_blank" class="block p-2 rounded-xl bg-stone-800/80 hover:bg-stone-800 border border-stone-700 text-amber-200 transition">
-                        💧 Fontaine de Marie (Puits historique)
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Centre : Sanctuaire & Avatar avec Halo lumineux -->
-        <div class="flex-1 bg-stone-900 flex flex-col items-center justify-center p-6 relative overflow-hidden">
-            <!-- Cercles de lumière d'ambiance -->
-            <div class="absolute w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-            <!-- Cadre de l'Avatar de Saint Joseph -->
-            <div class="relative z-10 max-w-sm w-full bg-stone-900/90 border-2 border-amber-600/60 rounded-3xl p-6 shadow-2xl flex flex-col items-center text-center halo-glow">
-                
-                <!-- Illustration / Icône de Saint Joseph -->
-                <div class="w-32 h-32 rounded-full border-4 border-amber-500/80 flex items-center justify-center text-6xl bg-gradient-to-b from-stone-800 to-stone-900 mb-4 shadow-inner relative">
-                    <span id="avatar-icon">🧔‍♂️</span>
-                </div>
-
-                <h2 id="avatar-role" class="title-font text-lg font-bold text-amber-300">Saint Joseph Travailleur</h2>
-                <p class="text-xs text-stone-400 mt-1 italic">Modèle de tous ceux qui travaillent</p>
-
-                <!-- Bouton Lecture Prière du Travailleur -->
-                <button onclick="ouvrirPriereTravailleur()" class="mt-5 w-full bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold py-2.5 px-4 rounded-xl text-xs transition shadow flex items-center justify-center space-x-2">
-                    <span>📖</span> <span>Lire la Prière du Travailleur</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Panneau Droit : Menu & Personnalisation -->
-        <div class="w-full lg:w-80 acacia-wood border-l border-amber-900/30 p-5 flex flex-col space-y-5 overflow-y-auto z-10 shadow-xl">
-            
-            <div class="space-y-3">
-                <h3 class="title-font text-xs font-bold text-amber-300 uppercase tracking-wider">Sélection des Titres</h3>
-                <select id="menu-titres" onchange="gererSelectionMenu(this.value)" class="w-full bg-stone-900 border border-amber-600/40 text-xs text-stone-200 rounded-xl p-2.5 outline-none focus:border-amber-400">
-                    <option value="style_travailleur">Saint Joseph Travailleur</option>
+    /* Halo interactif au survol de Saint-Joseph */
+    .halo-effect {
+      filter: drop-shadow(0 0 10px rgba(234, 179, 8, 0.3));
+      transition: all 0.5s ease;
+    }
+    .halo-container:hover .halo-effect {
+      filter: drop-shadow(0 0 28px rgba(234, 179, 8, 0.8));
+    }
+    .halo-container:hover .
+    leur</option>
                     <option value="style_juste">Saint Joseph le Juste</option>
                     <option value="style_demons">Saint Joseph Terreur des démons</option>
                 </select>
