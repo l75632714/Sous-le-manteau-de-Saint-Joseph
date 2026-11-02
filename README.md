@@ -157,13 +157,13 @@
 
                 <!-- Forme / Pastille interactive 1 (Gauche - Dates de l'année) -->
                 <button onclick="openModal('dates')" title="Dates de l'année" class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-amber-500/90 hover:bg-amber-400 text-white shadow-lg flex items-center justify-center border-2 border-white animate-pulse transition hover:scale-110 group">
-                  <span class="text-xs font-bold">📅</span>
+                  <span class="text-xs font-bold"> </span>
                   <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Dates & Prières</span>
                 </button>
 
                 <!-- Forme / Pastille interactive 2 (Droite - Titres de Saint-Joseph) -->
                 <button onclick="openModal('titles')" title="Titres de Saint-Joseph" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-blue-600/90 hover:bg-blue-500 text-white shadow-lg flex items-center justify-center border-2 border-white animate-pulse transition hover:scale-110 group">
-                  <span class="text-xs font-bold">👑</span>
+                  <span class="text-xs font-bold"> </span>
                   <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Titres de Saint-Joseph</span>
                 </button>
               </div>
