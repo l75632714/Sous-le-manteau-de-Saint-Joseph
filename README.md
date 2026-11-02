@@ -85,11 +85,12 @@
         <!-- Controls Header centrés (SVG vectoriels natifs Android) -->
         <div class="flex items-center justify-center gap-3">
           
-          <!-- Bouton Colombe / Ambiance -->
-          <button id="dove-btn" onclick="toggleDoveSound()" title="Ambiance de la Colombe" class="p-3 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-600/60 transition cursor-pointer flex items-center justify-center group active:scale-95">
+          <!-- Bouton Musique / Note -->
+          <button id="dove-btn" onclick="toggleDoveSound()" title="Ambiance Musicale" class="p-3 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-600/60 transition cursor-pointer flex items-center justify-center group active:scale-95">
             <svg class="w-6 h-6 text-slate-200 group-hover:text-amber-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 4.5c-2 0-3.8.8-5 2.2C5.5 5.2 3.5 4.5 1.5 5c2 2 3 4.5 3 7.5 0 3 2.5 5 5 5h1c.5 2 2 3.5 4 3.5s3.5-1.5 3.5-3.5c0-.5-.1-1-.3-1.5 2-.5 3.8-2 4.8-4C20 12 16 12 12 4.5z"/>
-              <path d="M4.5 12.5c-1-1-2.5-1.5-3.5-1"/>
+              <path d="M9 18V5l12-2v13" />
+              <circle cx="6" cy="18" r="3" fill="currentColor" />
+              <circle cx="18" cy="16" r="3" fill="currentColor" />
             </svg>
           </button>
 
@@ -300,40 +301,38 @@
       
       if (type === 'dates') {
         content.innerHTML = `
-          <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Dates & Prières de l'année</h4>
+          <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Date</h4>
           <div class="space-y-3">
-            <button onclick="alert('Chargement de la prière du 19 Mars')" class="w-full text-left p-4 rounded-xl bg-slate-50 hover:bg-amber-50 border border-slate-200/80 transition flex items-center justify-between group">
-              <div>
-                <span class="block text-xs font-bold text-amber-600 uppercase mb-0.5">19 Mars</span>
-                <span class="text-sm font-semibold text-slate-800 group-hover:text-amber-900">Ave Joseph & Méditation</span>
-              </div>
-              <span class="text-xs font-bold text-amber-600">Lire →</span>
-            </button>
-            <button onclick="alert('Chargement de la prière du 1er Mai')" class="w-full text-left p-4 rounded-xl bg-slate-50 hover:bg-amber-50 border border-slate-200/80 transition flex items-center justify-between group">
-              <div>
-                <span class="block text-xs font-bold text-amber-600 uppercase mb-0.5">1er Mai</span>
-                <span class="text-sm font-semibold text-slate-800 group-hover:text-amber-900">Prière du Travailleur</span>
-              </div>
-              <span class="text-xs font-bold text-amber-600">Lire →</span>
-            </button>
+            <div class="w-full p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col gap-1">
+              <span class="text-xs font-bold text-amber-600 uppercase">19 Mars</span>
+              <button onclick="alert('Ouverture de la prière : Ave Joseph')" class="text-left text-sm font-semibold text-slate-800 hover:text-amber-700 underline transition cursor-pointer">
+                Saint-Joseph, époux de la bienheureuse Vierge Marie
+              </button>
+            </div>
+            <div class="w-full p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col gap-1">
+              <span class="text-xs font-bold text-amber-600 uppercase">1er Mai</span>
+              <button onclick="alert('Ouverture de la prière : Saint-Joseph travailleur')" class="text-left text-sm font-semibold text-slate-800 hover:text-amber-700 underline transition cursor-pointer">
+                Saint-Joseph travailleur
+              </button>
+            </div>
           </div>
         `;
       } else if (type === 'titles') {
         content.innerHTML = `
           <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Titres de Saint-Joseph</h4>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-            <button onclick="alert('Saint-Joseph le juste')" class="p-4 rounded-xl bg-slate-50 hover:bg-blue-50 border border-slate-200/80 text-left transition group">
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 text-left">
               <span class="block text-xs font-bold text-blue-600 uppercase mb-1">Juste</span>
               <span class="text-sm font-semibold text-slate-800">Saint-Joseph le juste</span>
-            </button>
-            <button onclick="alert('Saint-Joseph travailleur')" class="p-4 rounded-xl bg-slate-50 hover:bg-blue-50 border border-slate-200/80 text-left transition group">
+            </div>
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 text-left">
               <span class="block text-xs font-bold text-blue-600 uppercase mb-1">Travail</span>
               <span class="text-sm font-semibold text-slate-800">Saint-Joseph travailleur</span>
-            </button>
-            <button onclick="alert('Terreur des démons')" class="p-4 rounded-xl bg-slate-50 hover:bg-blue-50 border border-slate-200/80 text-left transition group">
+            </div>
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 text-left">
               <span class="block text-xs font-bold text-blue-600 uppercase mb-1">Protection</span>
               <span class="text-sm font-semibold text-slate-800">Terreur des démons</span>
-            </button>
+            </div>
           </div>
         `;
       }
