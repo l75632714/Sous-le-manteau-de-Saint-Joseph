@@ -103,78 +103,80 @@
       </div>
     </header>
 
-    <!-- Layout Principal : Menu Neuvaine à gauche (verrouillé), Contenu à droite -->
-    <div class="max-w-7xl mx-auto px-4 md:px-6 py-8 flex-grow w-full flex flex-col md:flex-row gap-8 items-start">
+    <!-- Layout Principal : Menu Neuvaine à gauche (verrouillé), Contenu à droite (hauteurs égales) -->
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-8 flex-grow w-full flex flex-col md:flex-row gap-8 items-stretch">
       
       <!-- Panneau Latéral Gauche : Neuvaine (Verrouillé) -->
-      <aside class="w-full md:w-72 flex-shrink-0">
-        <div id="neuvaine-panel" class="bg-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 sticky top-28 transition-colors duration-500">
-          <div class="mb-6 text-center md:text-left border-b border-slate-100 pb-4">
-            <h2 class="font-opensans-bold text-xl text-slate-900 text-royal mb-1">
-              Neuvaine
-            </h2>
-            <p class="text-xs text-slate-500 font-medium italic">
-               Suivez l'avancement de votre neuvaine.
-            </p>
-          </div>
+      <aside class="w-full md:w-72 flex-shrink-0 flex flex-col">
+        <div id="neuvaine-panel" class="bg-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 sticky top-28 transition-colors duration-500 h-full flex flex-col justify-between">
+          <div>
+            <div class="mb-6 text-center md:text-left border-b border-slate-100 pb-4">
+              <h2 class="font-opensans-bold text-xl text-slate-900 text-royal mb-1">
+                Neuvaine
+              </h2>
+              <p class="text-xs text-slate-500 font-medium italic">
+                 Suivez l'avancement de votre neuvaine.
+              </p>
+            </div>
 
-          <!-- Liste verticale fine des 9 jours -->
-          <div class="space-y-2.5">
-            <script>
-              for (let i = 1; i <= 9; i++) {
-                document.write(`
-                  <label class="flex items-center justify-between p-3 rounded-xl border border-slate-100 bg-slate-50/60 hover:bg-amber-50/40 hover:border-amber-200/60 cursor-pointer transition group">
-                    <span class="text-sm font-medium text-slate-700 group-hover:text-slate-900">Jour ${i}</span>
-                    <input type="checkbox" class="w-4 h-4 accent-amber-600 rounded focus:ring-amber-500 cursor-pointer">
-                  </label>
-                `);
-              }
-            </script>
+            <!-- Liste verticale fine des 9 jours -->
+            <div class="space-y-2.5">
+              <script>
+                for (let i = 1; i <= 9; i++) {
+                  document.write(`
+                    <label class="flex items-center justify-between p-3 rounded-xl border border-slate-100 bg-slate-50/60 hover:bg-amber-50/40 hover:border-amber-200/60 cursor-pointer transition group">
+                      <span class="text-sm font-medium text-slate-700 group-hover:text-slate-900">Jour ${i}</span>
+                      <input type="checkbox" class="w-4 h-4 accent-amber-600 rounded focus:ring-amber-500 cursor-pointer">
+                    </label>
+                  `);
+                }
+              </script>
+            </div>
           </div>
         </div>
       </aside>
 
-      <!-- Zone Principale : Saint Joseph & Illustration alignée en hauteur -->
-      <main class="flex-grow w-full">
+      <!-- Zone Principale : Saint Joseph (Même hauteur exacte que la Neuvaine) -->
+      <main class="flex-grow w-full flex flex-col">
         
-        <section id="main-section" class="bg-card bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-slate-200/80 transition-colors duration-500 relative flex flex-col justify-between">
+        <section id="main-section" class="bg-card bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-slate-200/80 transition-colors duration-500 relative flex flex-col justify-between h-full">
           
-          <div>
+          <div class="flex flex-col h-full justify-between">
             <!-- Titre simplifié -->
-            <h2 class="font-opensans-bold text-2xl md:text-4xl text-slate-900 text-royal mb-6 text-center tracking-tight">
+            <h2 class="font-opensans-bold text-2xl md:text-4xl text-slate-900 text-royal mb-4 text-center tracking-tight">
               Saint Joseph
             </h2>
 
-            <!-- Photo Classique Peinture Saint-Joseph & Formes Interactives repérables (hauteur harmonisée) -->
-            <div class="halo-container max-w-md mx-auto mb-4 relative flex flex-col items-center">
+            <!-- Conteneur de l'image agrandie pour remplir l'espace équivalent à la neuvaine -->
+            <div class="halo-container max-w-md mx-auto relative flex flex-col items-center w-full flex-grow justify-center">
               
-              <div class="relative rounded-2xl overflow-hidden halo-effect border-2 border-amber-400/40 p-1 bg-slate-900 w-full flex justify-center">
+              <div class="relative rounded-2xl overflow-hidden halo-effect border-2 border-amber-400/40 p-1 bg-slate-900 w-full flex justify-center h-full max-h-[580px]">
                 <img 
                   src="https://noma.org/wp-content/uploads/2018/01/56-63-old.jpg" 
                   alt="Saint-Joseph et l'Enfant-Jésus" 
-                  class="w-full h-[410px] md:h-[450px] object-cover rounded-xl transition-transform duration-500"
+                  class="w-full h-full object-cover rounded-xl transition-transform duration-500"
                 />
 
-                <!-- Forme / Pastille interactive 1 (Gauche - Dates de l'année) -->
-                <button onclick="openModal('dates')" title="Dates de l'année" class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-amber-500/90 hover:bg-amber-400 text-white shadow-lg flex items-center justify-center border-2 border-white animate-pulse transition hover:scale-110 group">
-                  <span class="text-xs font-bold"> </span>
+                <!-- Pastille interactive 1 (Jaune, sans contour) -->
+                <button onclick="openModal('dates')" title="Dates de l'année" class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-amber-500 hover:bg-amber-400 text-white shadow-lg flex items-center justify-center animate-pulse transition hover:scale-110 group">
+                  <span class="text-xs font-bold">📅</span>
                   <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Dates & Prières</span>
                 </button>
 
-                <!-- Forme / Pastille interactive 2 (Droite - Titres de Saint-Joseph) -->
-                <button onclick="openModal('titles')" title="Titres de Saint-Joseph" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-blue-600/90 hover:bg-blue-500 text-white shadow-lg flex items-center justify-center border-2 border-white animate-pulse transition hover:scale-110 group">
-                  <span class="text-xs font-bold"> </span>
+                <!-- Pastille interactive 2 (Bleue, sans contour) -->
+                <button onclick="openModal('titles')" title="Titres de Saint-Joseph" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-blue-600 hover:bg-blue-500 text-white shadow-lg flex items-center justify-center animate-pulse transition hover:scale-110 group">
+                  <span class="text-xs font-bold">👑</span>
                   <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Titres de Saint-Joseph</span>
                 </button>
               </div>
               
-              <p class="text-[11px] text-slate-400 mt-3 italic text-center">
+              <p class="text-[11px] text-slate-400 mt-2 italic text-center">
                 Source : Object Lesson: St. Joseph and the Christ Child — NOMA
               </p>
             </div>
           </div>
 
-          <!-- Modale / Panneau Superposé au clic sur les pastilles (Sans menus déroulants) -->
+          <!-- Modale / Panneau Superposé au clic sur les pastilles -->
           <div id="interactive-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 backdrop-blur-sm p-4">
             <div class="bg-white rounded-2xl max-w-2xl w-full p-6 md:p-8 shadow-2xl border border-amber-200 relative animate-in fade-in zoom-in duration-200">
               
