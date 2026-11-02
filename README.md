@@ -134,14 +134,14 @@
         </div>
       </aside>
 
-      <!-- Zone Principale : Nazareth & Illustration de Saint-Joseph avec formes interactives -->
+      <!-- Zone Principale : Saint Joseph & Illustration de Saint Joseph avec formes interactives -->
       <main class="flex-grow space-y-8">
         
         <section class="bg-card bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-slate-200/80 transition-colors duration-500 relative">
           
           <!-- Titre simplifié -->
           <h2 class="font-opensans-bold text-2xl md:text-4xl text-slate-900 text-royal mb-8 text-center tracking-tight">
-            Nazareth
+            Saint Joseph
           </h2>
 
           <!-- Photo Classique Peinture Saint-Joseph & Formes Interactives repérables -->
@@ -155,7 +155,7 @@
               />
 
               <!-- Forme / Pastille interactive 1 (Gauche - Dates de l'année) -->
-              <button onclick="openModal('dates')" title="Dates & Prières de l'année" class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-amber-500/90 hover:bg-amber-400 text-white shadow-lg flex items-center justify-center border-2 border-white animate-pulse transition hover:scale-110 group">
+              <button onclick="openModal('dates')" title="Dates de l'année" class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-amber-500/90 hover:bg-amber-400 text-white shadow-lg flex items-center justify-center border-2 border-white animate-pulse transition hover:scale-110 group">
                 <span class="material-symbols-outlined">
 calendar_today
 </span>
@@ -204,9 +204,10 @@ crown
     </div>
 
     <!-- Pied de Page Épuré (Argent & Blanc) -->
-    <footer class="text-center py-6 text-xs text-slate-400 border-t border-slate-200/60 bg-white">
-      Sous le manteau de Saint-Joseph
-    </footer>
+    <<footer>
+  <small>&copy; 2026 Sous le manteau de Saint Joseph . Tous droits réservés.</small>
+</footer>
+
 
   </div>
 
