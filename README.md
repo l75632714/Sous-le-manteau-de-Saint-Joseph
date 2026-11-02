@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sous le manteau de Saint-Joseph</title>
+  <title>Sous le manteau de Saint Joseph</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -186,7 +186,7 @@ crown
               </button>
 
               <h3 class="font-opensans-bold text-2xl text-center text-slate-900 mb-6">
-                Saint-Joseph
+                Saint Joseph
               </h3>
 
               <!-- Contenu dynamique des menus selon la zone cliquée -->
@@ -205,6 +205,7 @@ crown
 
     <!-- Pied de Page Épuré (Argent & Blanc) -->
     <<footer>
+    
   <small>&copy; 2026 Sous le manteau de Saint Joseph. Tous droits réservés.</small>
 </footer>
 
