@@ -336,5 +336,57 @@
       if (prayerKey === 'ave-joseph') {
         content.innerHTML = `
           <div class="flex items-center justify-between mb-4 border-b pb-2 border-slate-100">
-            <button onclick="openModal('dates
-            
+            <button onclick="openModal('dates')" class="text-xs font-bold text-amber-600 hover:text-amber-700 flex items-center gap-1 cursor-pointer">
+              ← Retour
+            </button>
+            <span class="text-xs font-bold text-amber-600 uppercase">19 Mars</span>
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 mb-3 text-center">Je vous salue Joseph ou Ave Joseph</h4>
+          <div class="text-sm text-slate-700 leading-relaxed italic bg-amber-50/50 p-4 rounded-xl border border-amber-100/60 mb-4 space-y-2">
+            <p>Je vous salue, Joseph,</p>
+            <p>rempli de la grâce divine ;</p>
+            <p>le Sauveur a reposé dans vos bras et grandi sous vos yeux ;</p>
+            <p>vous êtes béni entre tous les hommes</p>
+            <p>et Jésus, l'Enfant divin de votre virginale Épouse, est béni.</p>
+            <p>Saint Joseph, donné pour père au Fils de Dieu,</p>
+            <p>priez pour nous dans nos soucis de famille, d'eau et de pain,</p>
+            <p>jusqu'à nos derniers jours,</p>
+            <p>et daignez nous secourir à l'heure de notre mort. Amen.</p>
+          </div>
+          <div class="text-[11px] text-slate-400 border-t border-slate-100 pt-3 text-center">
+            <p><strong>Auteur / Tradition :</strong> Prière traditionnelle catholique</p>
+            <p><strong>Source :</strong> Église Catholique (Vatican & Diocèses)</p>
+          </div>
+        `;
+      } else if (prayerKey === 'pie-x') {
+        content.innerHTML = `
+          <div class="flex items-center justify-between mb-4 border-b pb-2 border-slate-100">
+            <button onclick="openModal('dates')" class="text-xs font-bold text-amber-600 hover:text-amber-700 flex items-center gap-1 cursor-pointer">
+              ← Retour
+            </button>
+            <span class="text-xs font-bold text-amber-600 uppercase">1er Mai</span>
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 mb-3 text-center">Prière à Saint Joseph Travailleur</h4>
+          <div class="text-sm text-slate-700 leading-relaxed italic bg-amber-50/50 p-4 rounded-xl border border-amber-100/60 mb-4 space-y-3">
+            <p>Glorieux Saint Joseph, modèle de tous ceux qui sont voués au travail, obtenez-moi la grâce de travailler en esprit de pénitence pour l'expiation de mes nombreux péchés ;</p>
+            <p>de travailler en conscience, remettant le soin du devoir au-dessus de mes inclinations ;</p>
+            <p>de travailler avec reconnaissance et joie, regardant comme un honneur d'employer et de développer, par le travail, les dons reçus de Dieu ;</p>
+            <p>de travailler avec ordre, paix, modération et patience, sans jamais reculer devant la lassitude et les difficultés ;</p>
+            <p>de travailler surtout avec pureté d'intention et avec détachement de moi-même, ayant sans cesse devant les yeux la mort et le compte que je devrai rendre du temps perdu, des talents inutilisés, du bien omis et des vaines complaisances dans le succès, si dommageables à l'œuvre de Dieu.</p>
+            <p>Tout pour Jésus, tout par Marie, tout à votre imitation, ô patriarche Saint Joseph ! Telle sera ma devise à la vie et à la mort. Amen.</p>
+          </div>
+          <div class="text-[11px] text-slate-400 border-t border-slate-100 pt-3 text-center">
+            <p><strong>Auteur :</strong> Pape Saint Pie X (1906)</p>
+            <p><strong>Source :</strong> Vatican / Archives des prières pontificales</p>
+          </div>
+        `;
+      }
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('interactive-modal');
+      modal.classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
