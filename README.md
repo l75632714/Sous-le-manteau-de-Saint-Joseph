@@ -318,10 +318,11 @@
         `;
       } else if (type === 'titles') {
         content.innerHTML = `
-          <div class="flex flex-col items-center justify-center text-center space-y-4 py-4">
+          <div class="flex flex-col items-center justify-center text-center space-y-3 py-6">
             <p class="text-base font-semibold text-slate-800">Le juste,</p>
             <p class="text-base font-semibold text-slate-800">travailleur,</p>
-            <p class="text-base font-semibold text-slate-800">terreur des démons</p>
+            <p class="text-base font-semibold text-slate-800">terreur des démons,</p>
+            <p class="text-base font-semibold text-slate-800">Protecteur de la Sainte Église.</p>
           </div>
         `;
       }
