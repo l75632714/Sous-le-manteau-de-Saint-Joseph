@@ -111,7 +111,7 @@
         <div class="bg-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 sticky top-28 transition-colors duration-500">
           <div class="mb-6 text-center md:text-left border-b border-slate-100 pb-4">
             <h2 class="font-opensans-bold text-xl text-slate-900 text-royal mb-1">
-              9e
+              Neuvaine
             </h2>
             <p class="text-xs text-slate-500 font-medium italic">
                Suivez l'avancement de votre neuvaine.
@@ -205,7 +205,7 @@ crown
 
     <!-- Pied de Page Épuré (Argent & Blanc) -->
     <<footer>
-  <small>&copy; 2026 Sous le manteau de Saint Joseph . Tous droits réservés.</small>
+  <small>&copy; 2026 Sous le manteau de Saint Joseph. Tous droits réservés.</small>
 </footer>
 
 
