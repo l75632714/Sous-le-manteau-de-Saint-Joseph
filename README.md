@@ -350,7 +350,7 @@
             </button>
             <span class="text-xs font-bold text-amber-600 uppercase">19 Mars</span>
           </div>
-          <h4 class="text-lg font-bold text-slate-900 mb-3 text-center">Je vous salue Joseph (Ave Joseph)</h4>
+          <h4 class="text-lg font-bold text-slate-900 mb-3 text-center">Je vous salue Joseph ou Ave Joseph</h4>
           <div class="text-sm text-slate-700 leading-relaxed italic bg-amber-50/50 p-4 rounded-xl border border-amber-100/60 mb-4 space-y-2">
             <p>Je vous salue, Joseph,</p>
             <p>rempli de la grâce divine ;</p>
