@@ -104,11 +104,11 @@
     </header>
 
     <!-- Layout Principal : Menu Neuvaine à gauche (verrouillé), Contenu à droite -->
-    <div class="max-w-7xl mx-auto px-4 md:px-6 py-8 flex-grow w-full flex flex-col md:flex-row gap-8">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-8 flex-grow w-full flex flex-col md:flex-row gap-8 items-start">
       
       <!-- Panneau Latéral Gauche : Neuvaine (Verrouillé) -->
       <aside class="w-full md:w-72 flex-shrink-0">
-        <div class="bg-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 sticky top-28 transition-colors duration-500">
+        <div id="neuvaine-panel" class="bg-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 sticky top-28 transition-colors duration-500">
           <div class="mb-6 text-center md:text-left border-b border-slate-100 pb-4">
             <h2 class="font-opensans-bold text-xl text-slate-900 text-royal mb-1">
               Neuvaine
@@ -134,49 +134,47 @@
         </div>
       </aside>
 
-      <!-- Zone Principale : Saint Joseph & Illustration de Saint Joseph avec formes interactives -->
-      <main class="flex-grow space-y-8">
+      <!-- Zone Principale : Saint Joseph & Illustration alignée en hauteur -->
+      <main class="flex-grow w-full">
         
-        <section class="bg-card bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-slate-200/80 transition-colors duration-500 relative">
+        <section id="main-section" class="bg-card bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-slate-200/80 transition-colors duration-500 relative flex flex-col justify-between">
           
-          <!-- Titre simplifié -->
-          <h2 class="font-opensans-bold text-2xl md:text-4xl text-slate-900 text-royal mb-8 text-center tracking-tight">
-            Saint Joseph
-          </h2>
+          <div>
+            <!-- Titre simplifié -->
+            <h2 class="font-opensans-bold text-2xl md:text-4xl text-slate-900 text-royal mb-6 text-center tracking-tight">
+              Saint Joseph
+            </h2>
 
-          <!-- Photo Classique Peinture Saint-Joseph & Formes Interactives repérables -->
-          <div class="halo-container max-w-sm mx-auto mb-6 relative flex flex-col items-center">
-            
-            <div class="relative rounded-2xl overflow-hidden halo-effect border-2 border-amber-400/40 p-1 bg-slate-900">
-              <img 
-                src="https://noma.org/wp-content/uploads/2018/01/56-63-old.jpg" 
-                alt="Saint-Joseph et l'Enfant-Jésus" 
-                class="w-full h-auto max-h-96 object-cover rounded-xl transition-transform duration-500"
-              />
+            <!-- Photo Classique Peinture Saint-Joseph & Formes Interactives repérables (hauteur harmonisée) -->
+            <div class="halo-container max-w-md mx-auto mb-4 relative flex flex-col items-center">
+              
+              <div class="relative rounded-2xl overflow-hidden halo-effect border-2 border-amber-400/40 p-1 bg-slate-900 w-full flex justify-center">
+                <img 
+                  src="https://noma.org/wp-content/uploads/2018/01/56-63-old.jpg" 
+                  alt="Saint-Joseph et l'Enfant-Jésus" 
+                  class="w-full h-[410px] md:h-[450px] object-cover rounded-xl transition-transform duration-500"
+                />
 
-              <!-- Forme / Pastille interactive 1 (Gauche - Dates de l'année) -->
-              <button onclick="openModal('dates')" title="Dates de l'année" class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-amber-500/90 hover:bg-amber-400 text-white shadow-lg flex items-center justify-center border-2 border-white animate-pulse transition hover:scale-110 group">
-                <span class="material-symbols-outlined">
-calendar_today
-</span>
-                <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Dates & Prières</span>
-              </button>
+                <!-- Forme / Pastille interactive 1 (Gauche - Dates de l'année) -->
+                <button onclick="openModal('dates')" title="Dates de l'année" class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-amber-500/90 hover:bg-amber-400 text-white shadow-lg flex items-center justify-center border-2 border-white animate-pulse transition hover:scale-110 group">
+                  <span class="text-xs font-bold">📅</span>
+                  <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Dates & Prières</span>
+                </button>
 
-              <!-- Forme / Pastille interactive 2 (Droite - Titres de Saint-Joseph) -->
-              <button onclick="openModal('titles')" title="Titres de Saint-Joseph" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-blue-600/90 hover:bg-blue-500 text-white shadow-lg flex items-center justify-center border-2 border-white animate-pulse transition hover:scale-110 group">
-                <span class="material-symbols-outlined">
-crown
-</span>
-                <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Titres de Saint-Joseph</span>
-              </button>
+                <!-- Forme / Pastille interactive 2 (Droite - Titres de Saint-Joseph) -->
+                <button onclick="openModal('titles')" title="Titres de Saint-Joseph" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-blue-600/90 hover:bg-blue-500 text-white shadow-lg flex items-center justify-center border-2 border-white animate-pulse transition hover:scale-110 group">
+                  <span class="text-xs font-bold">👑</span>
+                  <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Titres de Saint-Joseph</span>
+                </button>
+              </div>
+              
+              <p class="text-[11px] text-slate-400 mt-3 italic text-center">
+                Source : Object Lesson: St. Joseph and the Christ Child — NOMA
+              </p>
             </div>
-            
-            <p class="text-[11px] text-slate-400 mt-3 italic text-center">
-              Source : Object Lesson: St. Joseph and the Christ Child — NOMA
-            </p>
           </div>
 
-          <!-- Modale / Panneau Superposé au clic sur les pastilles -->
+          <!-- Modale / Panneau Superposé au clic sur les pastilles (Sans menus déroulants) -->
           <div id="interactive-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 backdrop-blur-sm p-4">
             <div class="bg-white rounded-2xl max-w-2xl w-full p-6 md:p-8 shadow-2xl border border-amber-200 relative animate-in fade-in zoom-in duration-200">
               
@@ -189,8 +187,8 @@ crown
                 Saint Joseph
               </h3>
 
-              <!-- Contenu dynamique des menus selon la zone cliquée -->
-              <div id="modal-content" class="space-y-6">
+              <!-- Contenu dynamique interactif sans menus déroulants -->
+              <div id="modal-content" class="space-y-4">
                 <!-- Rempli dynamiquement par JS -->
               </div>
 
@@ -203,16 +201,14 @@ crown
 
     </div>
 
-    <!-- Pied de Page Épuré (Argent & Blanc) -->
-    <<footer>
-    
-  <small>&copy; 2026 Sous le manteau de Saint Joseph. Tous droits réservés.</small>
-</footer>
-
+    <!-- Pied de Page Épuré (Argent & Blanc) - Centré -->
+    <footer class="w-full text-center py-6 text-xs text-slate-400 border-t border-slate-200/60 bg-white">
+      <small>&copy; 2026 Sous le manteau de Saint Joseph. Tous droits réservés.</small>
+    </footer>
 
   </div>
 
-  <!-- Audio API & Gestion des Modales -->
+  <!-- Audio API & Gestion des Modales Interactives -->
   <script>
     let audioCtx = null;
     let isPlayingDove = false;
@@ -318,54 +314,40 @@ crown
       
       if (type === 'dates') {
         content.innerHTML = `
-          <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">Dates & Prières de l'année</h4>
-          <div class="space-y-4">
-            <div>
-              <label class="block text-xs font-medium text-slate-600 mb-1">19 Mars — Ave Joseph</label>
-              <select class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl p-3 font-medium focus:ring-2 focus:ring-amber-400 focus:outline-none">
-                <option value="" disabled selected>Sélectionner une option</option>
-                <option value="ave_joseph">Prière Ave Joseph</option>
-                <option value="meditation_19mars">Méditation du 19 Mars</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs font-medium text-slate-600 mb-1">1er Mai — Prière du Travailleur</label>
-              <select class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl p-3 font-medium focus:ring-2 focus:ring-amber-400 focus:outline-none">
-                <option value="" disabled selected>Sélectionner une option</option>
-                <option value="priere_travailleur">Prière du Travailleur</option>
-                <option value="meditation_1mai">Méditation du 1er Mai</option>
-              </select>
-            </div>
+          <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Dates & Prières de l'année</h4>
+          <div class="space-y-3">
+            <button onclick="alert('Chargement de la prière du 19 Mars')" class="w-full text-left p-4 rounded-xl bg-slate-50 hover:bg-amber-50 border border-slate-200/80 transition flex items-center justify-between group">
+              <div>
+                <span class="block text-xs font-bold text-amber-600 uppercase mb-0.5">19 Mars</span>
+                <span class="text-sm font-semibold text-slate-800 group-hover:text-amber-900">Ave Joseph & Méditation</span>
+              </div>
+              <span class="text-xs font-bold text-amber-600">Lire →</span>
+            </button>
+            <button onclick="alert('Chargement de la prière du 1er Mai')" class="w-full text-left p-4 rounded-xl bg-slate-50 hover:bg-amber-50 border border-slate-200/80 transition flex items-center justify-between group">
+              <div>
+                <span class="block text-xs font-bold text-amber-600 uppercase mb-0.5">1er Mai</span>
+                <span class="text-sm font-semibold text-slate-800 group-hover:text-amber-900">Prière du Travailleur</span>
+              </div>
+              <span class="text-xs font-bold text-amber-600">Lire →</span>
+            </button>
           </div>
         `;
       } else if (type === 'titles') {
         content.innerHTML = `
-          <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">Titres de Saint-Joseph</h4>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div>
-              <label class="block text-xs font-semibold text-slate-500 uppercase mb-2">Saint-Joseph le juste</label>
-              <select class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl p-3 font-medium focus:ring-2 focus:ring-amber-400 focus:outline-none">
-                <option value="" disabled selected>Choisir</option>
-                <option value="meditation_juste">Méditation</option>
-                <option value="priere_juste">Prière</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-500 uppercase mb-2">Saint-Joseph travailleur</label>
-              <select class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl p-3 font-medium focus:ring-2 focus:ring-amber-400 focus:outline-none">
-                <option value="" disabled selected>Choisir</option>
-                <option value="meditation_travail">Méditation</option>
-                <option value="priere_travail">Prière</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-500 uppercase mb-2">Terreur des démons</label>
-              <select class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl p-3 font-medium focus:ring-2 focus:ring-amber-400 focus:outline-none">
-                <option value="" disabled selected>Choisir</option>
-                <option value="protection">Protection</option>
-                <option value="litanie">Litanies</option>
-              </select>
-            </div>
+          <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Titres de Saint-Joseph</h4>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <button onclick="alert('Saint-Joseph le juste')" class="p-4 rounded-xl bg-slate-50 hover:bg-blue-50 border border-slate-200/80 text-left transition group">
+              <span class="block text-xs font-bold text-blue-600 uppercase mb-1">Juste</span>
+              <span class="text-sm font-semibold text-slate-800">Saint-Joseph le juste</span>
+            </button>
+            <button onclick="alert('Saint-Joseph travailleur')" class="p-4 rounded-xl bg-slate-50 hover:bg-blue-50 border border-slate-200/80 text-left transition group">
+              <span class="block text-xs font-bold text-blue-600 uppercase mb-1">Travail</span>
+              <span class="text-sm font-semibold text-slate-800">Saint-Joseph travailleur</span>
+            </button>
+            <button onclick="alert('Terreur des démons')" class="p-4 rounded-xl bg-slate-50 hover:bg-blue-50 border border-slate-200/80 text-left transition group">
+              <span class="block text-xs font-bold text-blue-600 uppercase mb-1">Protection</span>
+              <span class="text-sm font-semibold text-slate-800">Terreur des démons</span>
+            </button>
           </div>
         `;
       }
