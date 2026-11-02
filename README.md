@@ -103,10 +103,10 @@
       </div>
     </header>
 
-    <!-- Layout Principal : Menu 9e à gauche (verrouillé), Contenu à droite -->
+    <!-- Layout Principal : Menu Neuvaine à gauche (verrouillé), Contenu à droite -->
     <div class="max-w-7xl mx-auto px-4 md:px-6 py-8 flex-grow w-full flex flex-col md:flex-row gap-8">
       
-      <!-- Panneau Latéral Gauche : 9e (Verrouillé) -->
+      <!-- Panneau Latéral Gauche : Neuvaine (Verrouillé) -->
       <aside class="w-full md:w-72 flex-shrink-0">
         <div class="bg-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 sticky top-28 transition-colors duration-500">
           <div class="mb-6 text-center md:text-left border-b border-slate-100 pb-4">
@@ -114,7 +114,7 @@
               9e
             </h2>
             <p class="text-xs text-slate-500 font-medium italic">
-              Cocher chaque jour de votre neuvaine.
+               Suivez l'avancement de votre neuvaine.
             </p>
           </div>
 
@@ -156,13 +156,17 @@
 
               <!-- Forme / Pastille interactive 1 (Gauche - Dates de l'année) -->
               <button onclick="openModal('dates')" title="Dates & Prières de l'année" class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-amber-500/90 hover:bg-amber-400 text-white shadow-lg flex items-center justify-center border-2 border-white animate-pulse transition hover:scale-110 group">
-                <span class="text-xs font-bold">📅</span>
+                <span class="material-symbols-outlined">
+calendar_today
+</span>
                 <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Dates & Prières</span>
               </button>
 
               <!-- Forme / Pastille interactive 2 (Droite - Titres de Saint-Joseph) -->
               <button onclick="openModal('titles')" title="Titres de Saint-Joseph" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-blue-600/90 hover:bg-blue-500 text-white shadow-lg flex items-center justify-center border-2 border-white animate-pulse transition hover:scale-110 group">
-                <span class="text-xs font-bold">👑</span>
+                <span class="material-symbols-outlined">
+crown
+</span>
                 <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Titres de Saint-Joseph</span>
               </button>
             </div>
