@@ -318,20 +318,10 @@
         `;
       } else if (type === 'titles') {
         content.innerHTML = `
-          <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Titres de Saint-Joseph</h4>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 text-left">
-              <span class="block text-xs font-bold text-blue-600 uppercase mb-1">Juste</span>
-              <span class="text-sm font-semibold text-slate-800">Saint-Joseph le juste</span>
-            </div>
-            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 text-left">
-              <span class="block text-xs font-bold text-blue-600 uppercase mb-1">Travail</span>
-              <span class="text-sm font-semibold text-slate-800">Saint-Joseph travailleur</span>
-            </div>
-            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 text-left">
-              <span class="block text-xs font-bold text-blue-600 uppercase mb-1">Protection</span>
-              <span class="text-sm font-semibold text-slate-800">Terreur des démons</span>
-            </div>
+          <div class="flex flex-col items-center justify-center text-center space-y-4 py-4">
+            <p class="text-base font-semibold text-slate-800">Le juste,</p>
+            <p class="text-base font-semibold text-slate-800">travailleur,</p>
+            <p class="text-base font-semibold text-slate-800">terreur des démons</p>
           </div>
         `;
       }
