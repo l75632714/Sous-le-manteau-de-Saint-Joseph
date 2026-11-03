@@ -194,7 +194,7 @@
                 ✕
               </button>
 
-              <h3 class="font-opensans-bold text-2xl text-center text-slate-900 mb-6">
+              <h3 class="font-opensans-bold text-2xl text-center text-slate-900 mb-4">
                 Saint Joseph
               </h3>
 
@@ -309,21 +309,22 @@
             <div class="w-full p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col gap-1">
               <span class="text-xs font-bold text-amber-600 uppercase">1er Mai</span>
               <button onclick="showPrayer('pie-x')" class="text-left text-sm font-semibold text-slate-800 hover:text-amber-700 underline transition cursor-pointer">
-                Saint-Joseph travailleur
+                Saint Joseph travailleur
               </button>
             </div>
           </div>
         `;
-      } else if (type === 'titles') {
+            } else if (type === 'titles') {
         content.innerHTML = `
-          <div class="flex flex-col items-center justify-center text-center space-y-2 py-4">
-            <p class="text-base font-semibold text-slate-800 w-full text-center">Le Juste,</p>
-            <p class="text-base font-semibold text-slate-800 w-full text-center">Travailleur,</p>
-            <p class="text-base font-semibold text-slate-800 w-full text-center">Terreur des démons,</p>
-            <p class="text-base font-semibold text-slate-800 w-full text-center">Protecteur de la Sainte Église.</p>
+          <div class="flex flex-col items-center justify-center text-center space-y-3 py-2">
+            <p class="text-base font-semibold text-slate-800 w-full text-center leading-normal m-0">Le Juste,</p>
+            <p class="text-base font-semibold text-slate-800 w-full text-center leading-normal m-0">Travailleur,</p>
+            <p class="text-base font-semibold text-slate-800 w-full text-center leading-normal m-0">Terreur des démons,</p>
+            <p class="text-base font-semibold text-slate-800 w-full text-center leading-normal m-0">Protecteur de la Sainte Église.</p>
           </div>
         `;
       }
+
       
       modal.classList.remove('hidden');
     }
