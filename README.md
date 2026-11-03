@@ -53,18 +53,12 @@
       transform: scale(1.01);
     }
 
-    /* Gradient personnalisé Argent / Doré / Bleu Royal */
-    .bg-royal-header {
-      background: linear-gradient(135deg, #0b192c 0%, #1e3e62 100%);
+    /* Couleur de la pastille bleue pour le fond de l'en-tête */
+    .bg-custom-blue {
+      background-color: #2563eb;
     }
-    .text-gold {
-      color: #d4af37;
-    }
-    .bg-gold {
-      background-color: #d4af37;
-    }
-    .border-gold {
-      border-color: #d4af37;
+    .soothing-mode .bg-custom-blue {
+      background-color: #1e293b !important;
     }
   </style>
 </head>
@@ -72,12 +66,12 @@
 
   <div id="app" class="min-h-screen flex flex-col justify-between">
     
-    <!-- En-tête Moderne Bleu Royal & Argent Épuré (Ligne sous le titre supprimée) -->
-    <header class="header-bg bg-royal-header text-white shadow-lg sticky top-0 z-50 transition-colors duration-500">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col items-center justify-center gap-4">
+    <!-- En-tête Moderne : Fond bleu de la pastille bleue, texte jaune de la pastille jaune, sans aucune ligne -->
+    <header class="header-bg bg-custom-blue text-white shadow-md sticky top-0 z-50 transition-colors duration-500 border-none outline-none">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col items-center justify-center gap-4 border-none">
         
-        <!-- Titre de l'application centré -->
-        <h1 class="font-opensans-bold text-2xl md:text-3xl tracking-wide text-amber-100 text-center">
+        <!-- Titre de l'application centré en jaune -->
+        <h1 class="font-opensans-bold text-2xl md:text-3xl tracking-wide text-amber-400 text-center border-none outline-none m-0 p-0">
           Sous le manteau de Saint Joseph
         </h1>
 
@@ -119,12 +113,12 @@
       <aside class="w-full md:w-72 flex-shrink-0 flex flex-col">
         <div id="neuvaine-panel" class="bg-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 sticky top-28 transition-colors duration-500 h-full flex flex-col justify-between">
           <div>
-            <!-- Titre & Description alignés à gauche (sans ligne de séparation) -->
-            <div class="mb-6 flex flex-col items-start text-left">
-              <h2 class="font-opensans-bold text-xl text-slate-900 text-royal mb-1">
+            <!-- Titre & Description alignés à gauche, sans aucune ligne -->
+            <div class="mb-6 flex flex-col items-start text-left border-none outline-none">
+              <h2 class="font-opensans-bold text-xl text-slate-900 text-royal mb-1 border-none outline-none m-0 p-0">
                 Neuvaine
               </h2>
-              <p class="text-xs text-slate-500 font-medium italic">
+              <p class="text-xs text-slate-500 font-medium italic border-none outline-none m-0 p-0">
                 Suivez l'avancement de votre neuvaine :
               </p>
             </div>
@@ -152,9 +146,9 @@
         <section id="main-section" class="bg-card bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-slate-200/80 transition-colors duration-500 relative flex flex-col justify-between h-full">
           
           <div class="flex flex-col h-full justify-between">
-            <!-- Titre centré (sans ligne de séparation) -->
-            <div class="flex flex-col items-center">
-              <h2 class="font-opensans-bold text-2xl md:text-4xl text-slate-900 text-royal mb-4 tracking-tight text-center">
+            <!-- Titre centré, sans aucune ligne -->
+            <div class="flex flex-col items-center border-none outline-none">
+              <h2 class="font-opensans-bold text-2xl md:text-4xl text-slate-900 text-royal mb-4 tracking-tight text-center border-none outline-none m-0 p-0">
                 Saint Joseph
               </h2>
             </div>
@@ -179,8 +173,8 @@
                   <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Titres de Saint Joseph</span>
                 </button>
 
-                <!-- Pastille interactive 3 (Rouge pure, placée sous la bleue près du cœur, sans texte au survol) -->
-                <button onclick="openModal('chaste-heart')" class="absolute top-[48%] right-[25%] transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-red-700 hover:bg-red-600 shadow-lg animate-pulse transition hover:scale-110 active:scale-95">
+                <!-- Pastille interactive 3 (Rouge pure, légèrement abaissée, sans texte au survol) -->
+                <button onclick="openModal('chaste-heart')" class="absolute top-[52%] right-[25%] transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-red-700 hover:bg-red-600 shadow-lg animate-pulse transition hover:scale-110 active:scale-95">
                 </button>
               </div>
               
@@ -322,6 +316,9 @@
       } else if (type === 'titles') {
         content.innerHTML = `
           <div class="flex flex-col items-start justify-start text-left space-y-3 py-2">
+            <h3 class="font-opensans-bold text-2xl text-slate-900 mb-2 w-full text-left border-none outline-none m-0 p-0">
+              Saint Joseph
+            </h3>
             <p class="text-base font-semibold text-slate-800 w-full text-left leading-normal m-0">Le Juste,</p>
             <p class="text-base font-semibold text-slate-800 w-full text-left leading-normal m-0">Travailleur,</p>
             <p class="text-base font-semibold text-slate-800 w-full text-left leading-normal m-0">Terreur des démons,</p>
