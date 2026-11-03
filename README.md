@@ -23,6 +23,15 @@
       font-weight: 700;
     }
 
+    /* Suppression absolue de toutes les bordures et soulignements sous les titres */
+    h1, h2, h3, h4, h5, h6 {
+      border: none !important;
+      border-bottom: none !important;
+      outline: none !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+    }
+
     /* Lumière apaisante (Mode Sombre Argent/Bleu Nuit) */
     .soothing-mode {
       background-color: #0f172a !important;
@@ -67,15 +76,15 @@
   <div id="app" class="min-h-screen flex flex-col justify-between">
     
     <!-- En-tête Fixe et Opaque en Haut (sans défilement ni superposition) -->
-    <header class="header-bg bg-custom-blue text-white shadow-md w-full border-none outline-none">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col items-center justify-center gap-4 border-none">
+    <header class="header-bg bg-custom-blue text-white shadow-md w-full border-0">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col items-center justify-center gap-4 border-0">
         
         <!-- Titre de l'application centré en jaune -->
-        <h1 class="font-opensans-bold text-2xl md:text-3xl tracking-wide text-amber-400 text-center border-none outline-none m-0 p-0">
+        <h1 class="font-opensans-bold text-2xl md:text-3xl tracking-wide text-amber-400 text-center m-0 p-0 border-0">
           Sous le manteau de Saint Joseph
         </h1>
 
-        <!-- Controls Header centrés (SVG vectoriels natifs Android) -->
+        <!-- Controls Header centrés -->
         <div class="flex items-center justify-center gap-3">
           
           <!-- Bouton Musique / Note -->
@@ -113,12 +122,12 @@
       <aside class="w-full md:w-72 flex-shrink-0 flex flex-col">
         <div id="neuvaine-panel" class="bg-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 transition-colors duration-500 h-full flex flex-col justify-between">
           <div>
-            <!-- Titre & Description alignés à gauche, sans aucune ligne -->
-            <div class="mb-6 flex flex-col items-start text-left border-none outline-none">
-              <h2 class="font-opensans-bold text-xl text-slate-900 text-royal mb-1 border-none outline-none m-0 p-0">
+            <!-- Titre & Description alignés à gauche -->
+            <div class="mb-6 flex flex-col items-start text-left border-0">
+              <h2 class="font-opensans-bold text-xl text-slate-900 text-royal mb-1 m-0 p-0 border-0">
                 Neuvaine
               </h2>
-              <p class="text-xs text-slate-500 font-medium italic border-none outline-none m-0 p-0">
+              <p class="text-xs text-slate-500 font-medium italic m-0 p-0 border-0">
                 Suivez l'avancement de votre neuvaine :
               </p>
             </div>
@@ -146,9 +155,9 @@
         <section id="main-section" class="bg-card bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-slate-200/80 transition-colors duration-500 relative flex flex-col justify-between h-full">
           
           <div class="flex flex-col h-full justify-between">
-            <!-- Titre centré, sans aucune ligne -->
-            <div class="flex flex-col items-center border-none outline-none">
-              <h2 class="font-opensans-bold text-2xl md:text-4xl text-slate-900 text-royal mb-4 tracking-tight text-center border-none outline-none m-0 p-0">
+            <!-- Titre centré -->
+            <div class="flex flex-col items-center border-0">
+              <h2 class="font-opensans-bold text-2xl md:text-4xl text-slate-900 text-royal mb-4 tracking-tight text-center m-0 p-0 border-0">
                 Saint Joseph
               </h2>
             </div>
@@ -163,15 +172,15 @@
                   class="w-full h-full object-cover rounded-xl transition-transform duration-500"
                 />
 
-                <!-- Pastille interactive 1 (Jaune pure, sans attribut title) -->
+                <!-- Pastille interactive 1 (Jaune pure) -->
                 <button onclick="openModal('dates')" class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-amber-500 hover:bg-amber-400 shadow-lg animate-pulse transition hover:scale-110 active:scale-95">
                 </button>
 
-                <!-- Pastille interactive 2 (Bleue pure, sans attribut title) -->
+                <!-- Pastille interactive 2 (Bleue pure) -->
                 <button onclick="openModal('titles')" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-blue-600 hover:bg-blue-500 shadow-lg animate-pulse transition hover:scale-110 active:scale-95">
                 </button>
 
-                <!-- Pastille interactive 3 (Rouge pure, légèrement abaissée, sans texte au survol) -->
+                <!-- Pastille interactive 3 (Rouge pure) -->
                 <button onclick="openModal('chaste-heart')" class="absolute top-[52%] right-[25%] transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-red-700 hover:bg-red-600 shadow-lg animate-pulse transition hover:scale-110 active:scale-95">
                 </button>
               </div>
@@ -291,7 +300,6 @@
       const container = document.getElementById('modal-container');
       const content = document.getElementById('modal-content');
       
-      // Réinitialisation de la hauteur de la modale par défaut
       container.style.maxHeight = '90vh';
       
       if (type === 'dates') {
@@ -313,8 +321,8 @@
         `;
       } else if (type === 'titles') {
         content.innerHTML = `
-          <div class="flex flex-col items-start justify-start text-left space-y-3 py-2">
-            <h3 class="font-opensans-bold text-2xl text-slate-900 mb-2 w-full text-left border-none outline-none m-0 p-0">
+          <div class="flex flex-col items-start justify-start text-left space-y-3 py-2 border-0">
+            <h3 class="font-opensans-bold text-2xl text-slate-900 mb-2 w-full text-left m-0 p-0 border-0">
               Saint Joseph
             </h3>
             <p class="text-base font-semibold text-slate-800 w-full text-left leading-normal m-0">Le Juste,</p>
@@ -324,7 +332,6 @@
           </div>
         `;
       } else if (type === 'chaste-heart') {
-        // Hauteur de l'encadré réduite au plus près du texte et centrée
         container.style.maxHeight = 'fit-content';
         content.innerHTML = `
           <div class="flex flex-col items-start justify-start text-left py-1">
