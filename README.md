@@ -121,7 +121,7 @@
         <div id="neuvaine-panel" class="bg-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 sticky top-28 transition-colors duration-500 h-full flex flex-col justify-between">
           <div>
             <!-- Titre & Description parfaitement centrés -->
-            <div class="mb-6 border-slate-100 flex flex-col items-center text-center">
+            <div class="mb-6 border-slate-100 flex flex-col items-center text-left">
               <h2 class="font-opensans-bold text-xl text-slate-900 text-royal mb-1">
                 Neuvaine
               </h2>
