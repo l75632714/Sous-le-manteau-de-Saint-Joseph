@@ -166,18 +166,16 @@
               <div class="relative rounded-2xl overflow-hidden halo-effect border-2 border-amber-400/40 p-1 bg-slate-900 w-full flex justify-center h-full max-h-[580px]">
                 <img 
                   src="https://noma.org/wp-content/uploads/2018/01/56-63-old.jpg" 
-                  alt="Saint-Joseph et l'Enfant-Jésus" 
+                  alt="Saint Joseph et l'Enfant-Jésus" 
                   class="w-full h-full object-cover rounded-xl transition-transform duration-500"
                 />
 
                 <!-- Pastille interactive 1 (Jaune pure, sans émoji et sans contour) -->
                 <button onclick="openModal('dates')" title="Dates de l'année" class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-amber-500 hover:bg-amber-400 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
-                  <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Dates & Prières</span>
                 </button>
 
                 <!-- Pastille interactive 2 (Bleue pure, sans émoji et sans contour) -->
                 <button onclick="openModal('titles')" title="Titres de Saint-Joseph" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-blue-600 hover:bg-blue-500 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
-                  <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Titres de Saint-Joseph</span>
                 </button>
               </div>
               
