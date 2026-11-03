@@ -1,404 +1,178 @@
 <!DOCTYPE html>
-<html lang="fr" class="h-full bg-slate-50">
+<html lang="fr" class="h-full">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Sous le manteau de Saint Joseph</title>
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Google Fonts: Open Sans (Normale & Grasse) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .font-opensans-bold {
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 700;
-    }
-
-    /* Suppression absolue de toutes les bordures et soulignements sous les titres */
-    h1, h2, h3, h4, h5, h6 {
-      border: none !important;
-      border-bottom: none !important;
-      outline: none !important;
-      text-decoration: none !important;
-      box-shadow: none !important;
-    }
-
-    /* Lumière apaisante (Mode Sombre Argent/Bleu Nuit) */
-    .soothing-mode {
-      background-color: #0f172a !important;
-      color: #f8fafc !important;
-    }
-    .soothing-mode .bg-card {
-      background-color: #1e293b !important;
-      border-color: #334155 !important;
-      color: #f8fafc !important;
-    }
-    .soothing-mode .header-bg {
-      background-color: #020617 !important;
-    }
-    .soothing-mode .text-royal {
-      color: #93c5fd !important;
-    }
-    .soothing-mode .border-silver {
-      border-color: #334155 !important;
-    }
-
-    /* Halo interactif au survol de Saint Joseph */
-    .halo-effect {
-      box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
-      transition: all 0.5s ease;
-    }
-    .halo-container:hover .halo-effect {
-      box-shadow: 0 0 35px rgba(212, 175, 55, 0.65);
-      transform: scale(1.01);
-    }
-
-    /* Couleur de la pastille bleue pour le fond de l'en-tête */
-    .bg-custom-blue {
-      background-color: #2563eb;
-    }
-    .soothing-mode .bg-custom-blue {
-      background-color: #1e293b !important;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sous le manteau de Saint Joseph</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
-<body class="bg-[#f3eee4] text-slate-800 font-['Open_Sans'] min-h-screen flex flex-col bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url(ElevenLabs_image_seedream-4_Une texture dou_2026-11-03T22_07_03.jpeg);"
-  class="h-full text-slate-800 bg-slate-50 transition-colors duration-500">
+<body class="bg-[#f3eee4] text-slate-800 font-['Open_Sans'] min-h-screen flex flex-col bg-cover bg-center bg-no-repeat bg-fixed transition-colors duration-300" style="background-image: url('ElevenLabs_image_seedream-4_Une texture dou_2026-11-03T22_07_03.jpg');">
 
-  <div id="app" class="min-h-screen flex flex-col justify-between">
-    
-    <!-- En-tête Fixe et Opaque en Haut (sans défilement ni superposition) -->
-    <header class="header-bg bg-custom-blue text-white shadow-md w-full border-0">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col items-center justify-center gap-4 border-0">
-        
-        <!-- Titre de l'application centré en jaune -->
-        <h1 class="font-opensans-bold text-2xl md:text-3xl tracking-wide text-amber-400 text-center m-0 p-0 border-0">
-          Sous le manteau de Saint Joseph
-        </h1>
+    <!-- En-tête -->
+    <header class="bg-slate-900/90 text-white shadow-md backdrop-blur-sm sticky top-0 z-40">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+            
+            <!-- Zone Gauche : Icônes réduites et discrètes (Son & Ambiance) -->
+            <div class="flex items-center space-x-2">
+                <!-- Bouton Son / Haut-parleur -->
+                <button onclick="toggleAudio()" id="audioBtn" class="p-1.5 rounded-full bg-slate-800 hover:bg-slate-700 text-amber-300 transition" title="Activer / Désactiver le son">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
+                    </svg>
+                </button>
+                
+                <!-- Bouton Ambiance Lumineuse (Lune) -->
+                <button onclick="toggleNightMode()" class="p-1.5 rounded-full bg-slate-800 hover:bg-slate-700 text-amber-300 transition" title="Changer l'ambiance lumineuse">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                </button>
+            </div>
 
-        <!-- Controls Header centrés -->
-        <div class="flex items-center justify-center gap-3">
-          
-          <!-- Bouton Musique / Note -->
-          <button id="dove-btn" onclick="toggleDoveSound()" title="Ambiance Musicale" class="p-3 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-600/60 transition cursor-pointer flex items-center justify-center group active:scale-95">
-            <svg class="w-6 h-6 text-slate-200 group-hover:text-amber-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 18V5l12-2v13" />
-              <circle cx="6" cy="18" r="3" fill="currentColor" />
-              <circle cx="18" cy="16" r="3" fill="currentColor" />
-            </svg>
-          </button>
-
-          <!-- Bouton Lumière Apaisante -->
-          <button id="light-btn" onclick="toggleSoothingLight()" title="Lumière apaisante" class="p-3 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-600/60 transition cursor-pointer flex items-center justify-center group active:scale-95">
-            <svg class="w-6 h-6 text-slate-200 group-hover:text-amber-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="4"/>
-              <path d="M12 2v2"/>
-              <path d="M12 20v2"/>
-              <path d="m4.93 4.93 1.41 1.41"/>
-              <path d="m17.66 17.66 1.41 1.41"/>
-              <path d="M2 12h2"/>
-              <path d="M20 12h2"/>
-              <path d="m6.34 17.66-1.41 1.41"/>
-              <path d="m19.07 4.93-1.41 1.41"/>
-            </svg>
-          </button>
+            <!-- Titre -->
+            <h1 class="text-lg md:text-xl font-bold text-amber-200">Sous le manteau de Saint Joseph</h1>
 
         </div>
-      </div>
     </header>
 
-    <!-- Layout Principal : Menu Neuvaine à gauche, Contenu à droite -->
-    <div class="max-w-7xl mx-auto px-4 md:px-6 py-8 flex-grow w-full flex flex-col md:flex-row gap-8 items-stretch">
-      
-      <!-- Panneau Latéral Gauche : Neuvaine -->
-      <aside class="w-full md:w-72 flex-shrink-0 flex flex-col">
-        <div id="neuvaine-panel" class="bg-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 transition-colors duration-500 h-full flex flex-col justify-between">
-          <div>
-            <!-- Titre & Description alignés à gauche -->
-            <div class="mb-6 flex flex-col items-start text-left border-0">
-              <h2 class="font-opensans-bold text-xl text-slate-900 text-royal mb-1 m-0 p-0 border-0">
-                Neuvaine
-              </h2>
-              <p class="text-xs text-slate-500 font-medium italic m-0 p-0 border-0">
-                Suivez l'avancement de votre neuvaine :
-              </p>
-            </div>
-
-            <!-- Liste verticale fine des 9 jours -->
-            <div class="space-y-2.5">
-              <script>
-                for (let i = 1; i <= 9; i++) {
-                  document.write(`
-                    <label class="flex items-center justify-between p-3 rounded-xl border border-slate-100 bg-slate-50/60 hover:bg-amber-50/40 hover:border-amber-200/60 cursor-pointer transition group">
-                      <span class="text-sm font-medium text-slate-700 group-hover:text-slate-900">Jour ${i}</span>
-                      <input type="checkbox" class="w-4 h-4 accent-amber-600 rounded focus:ring-amber-500 cursor-pointer">
-                    </label>
-                  `);
-                }
-              </script>
-            </div>
-          </div>
-        </div>
-      </aside>
-
-      <!-- Zone Principale : Saint Joseph -->
-      <main class="flex-grow w-full flex flex-col">
+    <!-- Contenu Principal -->
+    <main class="flex-1 max-w-4xl w-full mx-auto p-4 md:p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <section id="main-section" class="bg-card bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-slate-200/80 transition-colors duration-500 relative flex flex-col justify-between h-full">
-          
-          <div class="flex flex-col h-full justify-between">
-            <!-- Titre centré -->
-            <div class="flex flex-col items-center border-0">
-              <h2 class="font-opensans-bold text-2xl md:text-4xl text-slate-900 text-royal mb-4 tracking-tight text-center m-0 p-0 border-0">
-                Saint Joseph
-              </h2>
+        <!-- Colonne Gauche : Neuvaine -->
+        <section class="bg-white/80 backdrop-blur-sm p-5 rounded-2xl shadow-sm border border-amber-100/50 flex flex-col">
+            <h2 class="text-lg font-bold text-slate-900 mb-3 border-b border-amber-200/60 pb-2">Neuvaine à Saint Joseph</h2>
+            <p class="text-xs text-slate-600 mb-4">Cochez chaque jour pour suivre votre cheminement spirituel.</p>
+            
+            <div class="space-y-2 flex-1">
+                <!-- 9 Jours de Neuvaine -->
+                <script>
+                    for(let i = 1; i <= 9; i++) {
+                        document.write(`
+                            <label class="flex items-center space-x-3 p-2 rounded-lg hover:bg-amber-50/50 cursor-pointer transition">
+                                <input type="checkbox" class="w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500">
+                                <span class="text-sm font-medium text-slate-700">Jour ${i}</span>
+                            </label>
+                        `);
+                    }
+                </script>
             </div>
-
-            <!-- Conteneur de l'image -->
-            <div class="halo-container max-w-md mx-auto relative flex flex-col items-center w-full flex-grow justify-center">
-              
-              <div class="relative rounded-2xl overflow-hidden halo-effect border-2 border-amber-400/40 p-1 bg-slate-900 w-full flex justify-center h-full max-h-[580px]">
-                <img 
-                  src="https://noma.org/wp-content/uploads/2018/01/56-63-old.jpg" 
-                  alt="Saint Joseph et l'Enfant-Jésus" 
-                  class="w-full h-full object-cover rounded-xl transition-transform duration-500"
-                />
-
-                <!-- Pastille interactive 1 (Jaune pure) -->
-                <button onclick="openModal('dates')" class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-amber-500 hover:bg-amber-400 shadow-lg animate-pulse transition hover:scale-110 active:scale-95">
-                </button>
-
-                <!-- Pastille interactive 2 (Bleue pure) -->
-                <button onclick="openModal('titles')" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-blue-600 hover:bg-blue-500 shadow-lg animate-pulse transition hover:scale-110 active:scale-95">
-                </button>
-
-                <!-- Pastille interactive 3 (Rouge pure) -->
-                <button onclick="openModal('chaste-heart')" class="absolute top-[52%] right-[25%] transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-red-700 hover:bg-red-600 shadow-lg animate-pulse transition hover:scale-110 active:scale-95">
-                </button>
-              </div>
-              
-              <p class="text-[11px] text-slate-400 mt-2 italic text-center">
-                Source : Object Lesson: St. Joseph and the Christ Child — NOMA
-              </p>
-            </div>
-          </div>
-
-          <!-- Modale / Panneau Superposé -->
-          <div id="interactive-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 backdrop-blur-sm p-4">
-            <div id="modal-container" class="bg-white rounded-2xl max-w-2xl w-full p-6 md:p-8 shadow-2xl border border-amber-200 relative animate-in fade-in zoom-in duration-200 max-h-[90vh] overflow-y-auto">
-              
-              <!-- Bouton de fermeture -->
-              <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-2 rounded-lg text-lg font-bold cursor-pointer">
-                ✕
-              </button>
-
-              <!-- Contenu dynamique interactif -->
-              <div id="modal-content" class="space-y-4">
-                <!-- Rempli dynamiquement par JS -->
-              </div>
-
-            </div>
-          </div>
-
         </section>
 
-      </main>
+        <!-- Colonne Centrale / Droite : Image interactive de Saint Joseph -->
+        <section class="md:col-span-2 bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-sm border border-amber-100/50 flex flex-col items-center text-center relative">
+            <h2 class="text-xl font-semibold text-slate-900 mb-2">Prier sous son Manteau</h2>
+            <p class="text-sm text-slate-600 mb-4">Cliquez sur les pastilles dorées pour découvrir les prières associées.</p>
+            
+            <!-- Zone d'image avec pastilles -->
+            <div class="relative inline-block rounded-xl overflow-hidden shadow-md max-w-sm w-full">
+                <img src="saint-joseph.jpg" alt="Saint Joseph et l'Enfant Jésus" class="w-full h-auto object-cover" onError="this.src='https://via.placeholder.com/400x500?text=Saint+Joseph'">
+                
+                <!-- Pastille 1 : Protection du Manteau -->
+                <button onclick="openModal('Prière du Manteau', 'Très saint Joseph, étends sur moi et ma famille l\'ombre protectrice de ton manteau. Accorde-nous ta paix et veille sur nos cœurs au quotidien.')" 
+                        class="absolute top-1/4 left-1/3 bg-amber-400 hover:bg-amber-300 text-slate-900 w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-lg transition transform hover:scale-110" title="Protection">
+                    1
+                </button>
+                
+                <!-- Pastille 2 : Travail & Famille -->
+                <button onclick="openModal('Prière pour le Travail et le Foyer', 'Glorieux Saint Joseph, modèle de tous ceux qui sont voués au travail, obtiens-moi la grâce de remplir mes devoirs dans un esprit de gratitude et de joie.')" 
+                        class="absolute top-1/2 right-1/4 bg-amber-400 hover:bg-amber-300 text-slate-900 w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-lg transition transform hover:scale-110" title="Travail et Foyer">
+                    2
+                </button>
+                
+                <!-- Pastille 3 : Paix intérieure -->
+                <button onclick="openModal('Prière pour la Paix du Cœur', 'Saint Joseph, homme silencieux et juste, enseigne-nous la valeur du silence, de l\'écoute et de la confiance abandonnée entre les mains du Seigneur.')" 
+                        class="absolute bottom-1/4 left-1/2 bg-amber-400 hover:bg-amber-300 text-slate-900 w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-lg transition transform hover:scale-110" title="Paix">
+                    3
+                </button>
+            </div>
+        </section>
+    </main>
 
+    <!-- Fenêtre Modale (Popup Prières) -->
+    <div id="prayerModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-amber-100 transform transition-all">
+            <h3 id="modalTitle" class="text-xl font-bold text-slate-900 mb-3 text-amber-700"></h3>
+            <p id="modalText" class="text-slate-700 leading-relaxed text-sm mb-6"></p>
+            <div class="flex justify-end">
+                <button onclick="closeModal()" class="px-5 py-2 bg-slate-800 hover:bg-slate-700 text-white text-sm font-medium rounded-xl transition">
+                    Fermer
+                </button>
+            </div>
+        </div>
     </div>
 
-    <!-- Pied de Page Épuré - Centré -->
-    <footer class="w-full text-center py-6 text-xs text-slate-400 border-t border-slate-200/60 bg-white">
-      <small>&copy; 2026 Sous le manteau de Saint Joseph. Tous droits réservés.</small>
+    <!-- Pied de page -->
+    <footer class="bg-slate-900/90 text-slate-400 text-center py-4 text-xs mt-auto">
+        <p>© Sous le manteau de Saint Joseph — Tous droits réservés</p>
     </footer>
 
-  </div>
-
-  <!-- Audio API & Interactivité -->
-  <script>
-    let audioCtx = null;
-    let isPlayingDove = false;
-    let melodyInterval = null;
-
-    function initAudio() {
-      if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      }
-    }
-
-    function toggleDoveSound() {
-      initAudio();
-      if (isPlayingDove) {
-        stopDoveSound();
-      } else {
-        startDoveSound();
-      }
-    }
-
-    function startDoveSound() {
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume();
-      }
-      
-      isPlayingDove = true;
-      document.getElementById('dove-btn').classList.add('bg-amber-600', 'ring-2', 'ring-amber-300');
-
-      playPureNote();
-      melodyInterval = setInterval(() => {
-        if (isPlayingDove) {
-          playPureNote();
+    <!-- Scripts Javascript -->
+    <script>
+        // Gestion de la fenêtre modale
+        function openModal(title, text) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalText').innerText = text;
+            const modal = document.getElementById('prayerModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
         }
-      }, 4000);
-    }
 
-    function playPureNote() {
-      if (!audioCtx || !isPlayingDove) return;
+        function closeModal() {
+            const modal = document.getElementById('prayerModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
 
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
+        // Musique apaisante (Web Audio API sans fichier externe)
+        let audioCtx = null;
+        let isPlaying = false;
+        let intervalId = null;
 
-      const notes = [523.25, 659.25, 783.99, 880.00, 1046.50];
-      const randomFreq = notes[Math.floor(Math.random() * notes.length)];
+        function toggleAudio() {
+            if (!isPlaying) {
+                if (!audioCtx) {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                isPlaying = true;
+                document.getElementById('audioBtn').classList.add('ring-2', 'ring-amber-400');
+                
+                // Joue une note douce à intervalles réguliers
+                const notes = [261.63, 293.66, 329.63, 392.00, 440.00]; // Gamme pentatonique douce
+                intervalId = setInterval(() => {
+                    if (!isPlaying) return;
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    const freq = notes[Math.floor(Math.random() * notes.length)];
+                    
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+                    gain.gain.setValueAtTime(0.01, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.08, audioCtx.currentTime + 1);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 4);
+                    
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 4);
+                }, 2500);
+            } else {
+                isPlaying = false;
+                clearInterval(intervalId);
+                document.getElementById('audioBtn').classList.remove('ring-2', 'ring-amber-400');
+            }
+        }
 
-      osc.type = 'sine';
-      const now = audioCtx.currentTime;
-      
-      osc.frequency.setValueAtTime(randomFreq, now);
-
-      gain.gain.setValueAtTime(0.001, now);
-      gain.gain.linearRampToValueAtTime(0.03, now + 0.3);
-      gain.gain.exponentialRampToValueAtTime(0.0001, now + 3.0);
-
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-
-      osc.start(now);
-      osc.stop(now + 3.0);
-    }
-
-    function stopDoveSound() {
-      isPlayingDove = false;
-      if (melodyInterval) {
-        clearInterval(melodyInterval);
-      }
-      document.getElementById('dove-btn').classList.remove('bg-amber-600', 'ring-2', 'ring-amber-300');
-    }
-
-    function toggleSoothingLight() {
-      document.body.classList.toggle('soothing-mode');
-    }
-
-    function openModal(type) {
-      const modal = document.getElementById('interactive-modal');
-      const container = document.getElementById('modal-container');
-      const content = document.getElementById('modal-content');
-      
-      container.style.maxHeight = '90vh';
-      
-      if (type === 'dates') {
-        content.innerHTML = `
-          <div class="space-y-3">
-            <div class="w-full p-4 rounded-xl bg-blue-600/10 border border-blue-600/20 flex flex-col gap-1">
-              <span class="text-xs font-bold text-red-700 uppercase">19 Mars</span>
-              <button onclick="showPrayer('ave-joseph')" class="text-left text-sm font-semibold text-slate-800 hover:text-black underline transition cursor-pointer">
-                Époux de la bienheureuse Vierge Marie
-              </button>
-            </div>
-            <div class="w-full p-4 rounded-xl bg-blue-600/10 border border-blue-600/20 flex flex-col gap-1">
-              <span class="text-xs font-bold text-red-700 uppercase">1er Mai</span>
-              <button onclick="showPrayer('pie-x')" class="text-left text-sm font-semibold text-slate-800 hover:text-black underline transition cursor-pointer">
-                Travailleur
-              </button>
-            </div>
-          </div>
-        `;
-      } else if (type === 'titles') {
-        content.innerHTML = `
-          <div class="flex flex-col items-start justify-start text-left space-y-3 py-2 border-0">
-            <h3 class="font-opensans-bold text-2xl text-slate-900 mb-2 w-full text-left m-0 p-0 border-0">
-              Saint Joseph
-            </h3>
-            <p class="text-base font-semibold text-slate-800 w-full text-left leading-normal m-0">Le Juste,</p>
-            <p class="text-base font-semibold text-slate-800 w-full text-left leading-normal m-0">Travailleur,</p>
-            <p class="text-base font-semibold text-slate-800 w-full text-left leading-normal m-0">Terreur des démons,</p>
-            <p class="text-base font-semibold text-slate-800 w-full text-left leading-normal m-0">Protecteur de la Sainte Église.</p>
-          </div>
-        `;
-      } else if (type === 'chaste-heart') {
-        container.style.maxHeight = 'fit-content';
-        content.innerHTML = `
-          <div class="flex flex-col items-start justify-start text-left py-1">
-            <p class="text-base font-semibold text-slate-800 w-full text-left leading-normal m-0">Je bénis le cœur très chaste de Saint Joseph.</p>
-          </div>
-        `;
-      }
-      
-      modal.classList.remove('hidden');
-    }
-
-    function showPrayer(prayerKey) {
-      const content = document.getElementById('modal-content');
-      
-      if (prayerKey === 'ave-joseph') {
-        content.innerHTML = `
-          <div class="flex items-center justify-between mb-4 pb-2">
-            <button onclick="openModal('dates')" class="text-xs font-bold text-red-700 hover:text-red-800 flex items-center gap-1 cursor-pointer">
-              ← Retour
-            </button>
-            <span class="text-xs font-bold text-red-700 uppercase">19 Mars</span>
-          </div>
-          <div class="text-sm text-slate-700 leading-relaxed italic bg-blue-600/10 p-4 rounded-xl border border-blue-600/20 mb-4 space-y-2">
-            <p>Je vous salue, Joseph,</p>
-            <p>rempli de la grâce divine ;</p>
-            <p>le Sauveur a reposé dans vos bras et grandi sous vos yeux ;</p>
-            <p>vous êtes béni entre tous les hommes</p>
-            <p>et Jésus, l'Enfant divin de votre virginale Épouse, est béni.</p>
-            <p>Saint Joseph, donné pour père au Fils de Dieu,</p>
-            <p>priez pour nous dans nos soucis de famille, d'eau et de pain,</p>
-            <p>jusqu'à nos derniers jours,</p>
-            <p>et daignez nous secourir à l'heure de notre mort. Amen.</p>
-          </div>
-          <div class="text-[11px] text-slate-400 border-t border-slate-100 pt-3 text-center">
-            <p><strong>Auteur / Tradition :</strong> Prière traditionnelle catholique</p>
-            <p><strong>Source :</strong> Église Catholique (Vatican & Diocèses)</p>
-          </div>
-        `;
-      } else if (prayerKey === 'pie-x') {
-        content.innerHTML = `
-          <div class="flex items-center justify-between mb-4 pb-2">
-            <button onclick="openModal('dates')" class="text-xs font-bold text-red-700 hover:text-red-800 flex items-center gap-1 cursor-pointer">
-              ← Retour
-            </button>
-            <span class="text-xs font-bold text-red-700 uppercase">1er Mai</span>
-          </div>
-          <div class="text-sm text-slate-700 leading-relaxed italic bg-blue-600/10 p-4 rounded-xl border border-blue-600/20 mb-4 space-y-3">
-            <p>Glorieux Saint Joseph, modèle de tous ceux qui sont voués au travail, obtenez-moi la grâce de travailler en esprit de pénitence pour l'expiation de mes nombreux péchés ;</p>
-            <p>de travailler en conscience, remettant le soin du devoir au-dessus de mes inclinations ;</p>
-            <p>de travailler avec reconnaissance et joie, regardant comme un honneur d'employer et de développer, par le travail, les dons reçus de Dieu ;</p>
-            <p>de travailler avec ordre, paix, modération et patience, sans jamais reculer devant la lassitude et les difficultés ;</p>
-            <p>de travailler surtout avec pureté d'intention et avec détachement de moi-même, ayant sans cesse devant les yeux la mort et le compte que je devrai rendre du temps perdu, des talents inutilisés, du bien omis et des vaines complaisances dans le succès, si dommageables à l'œuvre de Dieu.</p>
-            <p>Tout pour Jésus, tout par Marie, tout à votre imitation, ô patriarche Saint Joseph ! Telle sera ma devise à la vie et à la mort. Amen.</p>
-          </div>
-          <div class="text-[11px] text-slate-400 border-t border-slate-100 pt-3 text-center">
-            <p><strong>Auteur :</strong> Pape Saint Pie X (1906)</p>
-            <p><strong>Source :</strong> Vatican / Archives des prières pontificales</p>
-          </div>
-        `;
-      }
-    }
-
-    function closeModal() {
-      const modal = document.getElementById('interactive-modal');
-      modal.classList.add('hidden');
-    }
-  </script>
+        // Mode Sombre / Ambiance Lumineuse
+        function toggleNightMode() {
+            document.body.classList.toggle('bg-slate-950');
+            document.body.classList.toggle('text-slate-100');
+        }
+    </script>
 </body>
 </html>
