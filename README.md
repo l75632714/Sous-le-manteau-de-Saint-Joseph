@@ -15,7 +15,6 @@
 
   <style>
     body {
-      <body class="bg-[#f3eee4] text-slate-800 font-['Open_Sans'] min-h-screen flex flex-col bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url(ElevenLabs_image_seedream-4_Une texture dou_2026-11-03T22_07_03.jpg');">
       font-family: 'Open Sans', sans-serif;
       -webkit-tap-highlight-color: transparent;
     }
@@ -72,7 +71,8 @@
     }
   </style>
 </head>
-    class="h-full text-slate-800 bg-slate-50 transition-colors duration-500">
+<body <body class="bg-[#f3eee4] text-slate-800 font-['Open_Sans'] min-h-screen flex flex-col bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url(ElevenLabs_image_seedream-4_Une texture dou_2026-11-03T22_07_03);">
+  class="h-full text-slate-800 bg-slate-50 transition-colors duration-500">
 
   <div id="app" class="min-h-screen flex flex-col justify-between">
     
