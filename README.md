@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Sous le manteau de Saint Joseph</title>
+  <title>Sous le manteau de Saint-Joseph</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -35,7 +35,6 @@
     }
     .soothing-mode .header-bg {
       background-color: #020617 !important;
-      border-bottom-color: #1e293b !important;
     }
     .soothing-mode .text-royal {
       color: #93c5fd !important;
@@ -74,12 +73,12 @@
   <div id="app" class="min-h-screen flex flex-col justify-between">
     
     <!-- En-tête Moderne Bleu Royal & Argent Épuré -->
-    <header class="header-bg bg-royal-header text-white shadow-lg border-slate-700/50 sticky top-0 z-50 transition-colors duration-500">
+    <header class="header-bg bg-royal-header text-white shadow-lg sticky top-0 z-50 transition-colors duration-500">
       <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col items-center justify-center gap-4">
         
         <!-- Titre de l'application centré -->
         <h1 class="font-opensans-bold text-2xl md:text-3xl tracking-wide text-amber-100 text-center">
-          Sous le manteau de Saint Joseph
+          Sous le manteau de Saint-Joseph
         </h1>
 
         <!-- Controls Header centrés (SVG vectoriels natifs Android) -->
@@ -120,13 +119,13 @@
       <aside class="w-full md:w-72 flex-shrink-0 flex flex-col">
         <div id="neuvaine-panel" class="bg-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 sticky top-28 transition-colors duration-500 h-full flex flex-col justify-between">
           <div>
-            <!-- Titre & Description parfaitement centrés -->
-            <div class="mb-6 border-slate-100 flex flex-col items-center text-left">
+            <!-- Titre & Description alignés à gauche -->
+            <div class="mb-6 flex flex-col items-start text-left">
               <h2 class="font-opensans-bold text-xl text-slate-900 text-royal mb-1">
                 Neuvaine
               </h2>
               <p class="text-xs text-slate-500 font-medium italic">
-                Suivez l'avancement de votre neuvaine :
+                Suivez l'avancement de votre neuvaine.
               </p>
             </div>
 
@@ -163,19 +162,26 @@
             <!-- Conteneur de l'image -->
             <div class="halo-container max-w-md mx-auto relative flex flex-col items-center w-full flex-grow justify-center">
               
-              <div class="relative rounded-2xl overflow-hidden halo-effect border-amber-400/40 p-1 bg-slate-900 w-full flex justify-center h-full max-h-[580px]">
+              <div class="relative rounded-2xl overflow-hidden halo-effect border-2 border-amber-400/40 p-1 bg-slate-900 w-full flex justify-center h-full max-h-[580px]">
                 <img 
                   src="https://noma.org/wp-content/uploads/2018/01/56-63-old.jpg" 
-                  alt="Saint Joseph et l'Enfant-Jésus" 
+                  alt="Saint-Joseph et l'Enfant-Jésus" 
                   class="w-full h-full object-cover rounded-xl transition-transform duration-500"
                 />
 
-                <!-- Pastille interactive 1 (Jaune pure, sans émoji et sans contour) -->
+                <!-- Pastille interactive 1 (Jaune pure) -->
                 <button onclick="openModal('dates')" title="Dates de l'année" class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-amber-500 hover:bg-amber-400 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
+                  <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Dates & Prières</span>
                 </button>
 
-                <!-- Pastille interactive 2 (Bleue pure, sans émoji et sans contour) -->
-                <button onclick="openModal('titles')" title="Titres de Saint Joseph" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-blue-600 hover:bg-blue-500 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
+                <!-- Pastille interactive 2 (Bleue pure) -->
+                <button onclick="openModal('titles')" title="Titres de Saint-Joseph" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-blue-600 hover:bg-blue-500 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
+                  <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Titres de Saint-Joseph</span>
+                </button>
+
+                <!-- Pastille interactive 3 (Rouge pure) -->
+                <button onclick="openModal('chaste-heart')" title="Cœur très chaste" class="absolute top-[42%] left-[48%] transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-red-700 hover:bg-red-600 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
+                  <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Cœur très chaste</span>
                 </button>
               </div>
               
@@ -185,7 +191,7 @@
             </div>
           </div>
 
-          <!-- Modale / Panneau Superposé au clic sur les pastilles -->
+          <!-- Modale / Panneau Superposé -->
           <div id="interactive-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 backdrop-blur-sm p-4">
             <div class="bg-white rounded-2xl max-w-2xl w-full p-6 md:p-8 shadow-2xl border border-amber-200 relative animate-in fade-in zoom-in duration-200 max-h-[90vh] overflow-y-auto">
               
@@ -194,11 +200,11 @@
                 ✕
               </button>
 
-              <h3 class="font-opensans-bold text-2xl text-left text-slate-900 mb-4">
+              <h3 class="font-opensans-bold text-2xl text-left text-slate-900 mb-4 w-full">
                 Saint Joseph
               </h3>
 
-              <!-- Contenu dynamique interactif sans menus déroulants -->
+              <!-- Contenu dynamique interactif -->
               <div id="modal-content" class="space-y-4">
                 <!-- Rempli dynamiquement par JS -->
               </div>
@@ -309,12 +315,12 @@
             <div class="w-full p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col gap-1">
               <span class="text-xs font-bold text-amber-600 uppercase">1er Mai</span>
               <button onclick="showPrayer('pie-x')" class="text-left text-sm font-semibold text-slate-800 hover:text-amber-700 underline transition cursor-pointer">
-                Saint Joseph travailleur
+                Saint-Joseph travailleur
               </button>
             </div>
           </div>
         `;
-                  } else if (type === 'titles') {
+      } else if (type === 'titles') {
         content.innerHTML = `
           <div class="flex flex-col items-start justify-start text-left space-y-3 py-2">
             <p class="text-base font-semibold text-slate-800 w-full text-left leading-normal m-0">Le Juste,</p>
@@ -323,9 +329,13 @@
             <p class="text-base font-semibold text-slate-800 w-full text-left leading-normal m-0">Protecteur de la Sainte Église.</p>
           </div>
         `;
+      } else if (type === 'chaste-heart') {
+        content.innerHTML = `
+          <div class="flex flex-col items-start justify-start text-left space-y-3 py-2">
+            <p class="text-base font-semibold text-slate-800 w-full text-left leading-normal m-0">Je bénis le cœur très chaste de Saint Joseph.</p>
+          </div>
+        `;
       }
-
-
       
       modal.classList.remove('hidden');
     }
@@ -335,7 +345,7 @@
       
       if (prayerKey === 'ave-joseph') {
         content.innerHTML = `
-          <div class="flex items-center justify-between mb-4 border-b pb-2 border-slate-100">
+          <div class="flex items-center justify-between mb-4 pb-2">
             <button onclick="openModal('dates')" class="text-xs font-bold text-amber-600 hover:text-amber-700 flex items-center gap-1 cursor-pointer">
               ← Retour
             </button>
@@ -360,7 +370,7 @@
         `;
       } else if (prayerKey === 'pie-x') {
         content.innerHTML = `
-          <div class="flex items-center justify-between mb-4 border-b pb-2 border-slate-100">
+          <div class="flex items-center justify-between mb-4 pb-2">
             <button onclick="openModal('dates')" class="text-xs font-bold text-amber-600 hover:text-amber-700 flex items-center gap-1 cursor-pointer">
               ← Retour
             </button>
