@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Sous le manteau de Saint-Joseph</title>
+  <title>Sous le manteau de Saint Joseph</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -43,7 +43,7 @@
       border-color: #334155 !important;
     }
 
-    /* Halo interactif au survol de Saint-Joseph */
+    /* Halo interactif au survol de Saint Joseph */
     .halo-effect {
       box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
       transition: all 0.5s ease;
@@ -78,7 +78,7 @@
         
         <!-- Titre de l'application centré -->
         <h1 class="font-opensans-bold text-2xl md:text-3xl tracking-wide text-amber-100 text-center">
-          Sous le manteau de Saint-Joseph
+          Sous le manteau de Saint Joseph
         </h1>
 
         <!-- Controls Header centrés (SVG vectoriels natifs Android) -->
@@ -119,13 +119,13 @@
       <aside class="w-full md:w-72 flex-shrink-0 flex flex-col">
         <div id="neuvaine-panel" class="bg-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 sticky top-28 transition-colors duration-500 h-full flex flex-col justify-between">
           <div>
-            <!-- Titre & Description alignés à gauche -->
+            <!-- Titre & Description alignés à gauche (avec deux points à la fin) -->
             <div class="mb-6 flex flex-col items-start text-left">
               <h2 class="font-opensans-bold text-xl text-slate-900 text-royal mb-1">
                 Neuvaine
               </h2>
               <p class="text-xs text-slate-500 font-medium italic">
-                Suivez l'avancement de votre neuvaine.
+                Suivez l'avancement de votre neuvaine :
               </p>
             </div>
 
@@ -165,7 +165,7 @@
               <div class="relative rounded-2xl overflow-hidden halo-effect border-2 border-amber-400/40 p-1 bg-slate-900 w-full flex justify-center h-full max-h-[580px]">
                 <img 
                   src="https://noma.org/wp-content/uploads/2018/01/56-63-old.jpg" 
-                  alt="Saint-Joseph et l'Enfant-Jésus" 
+                  alt="Saint Joseph et l'Enfant-Jésus" 
                   class="w-full h-full object-cover rounded-xl transition-transform duration-500"
                 />
 
@@ -175,12 +175,12 @@
                 </button>
 
                 <!-- Pastille interactive 2 (Bleue pure) -->
-                <button onclick="openModal('titles')" title="Titres de Saint-Joseph" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-blue-600 hover:bg-blue-500 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
-                  <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Titres de Saint-Joseph</span>
+                <button onclick="openModal('titles')" title="Titres de Saint Joseph" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-blue-600 hover:bg-blue-500 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
+                  <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Titres de Saint Joseph</span>
                 </button>
 
-                <!-- Pastille interactive 3 (Rouge pure) -->
-                <button onclick="openModal('chaste-heart')" title="Cœur très chaste" class="absolute top-[42%] left-[48%] transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-red-700 hover:bg-red-600 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
+                <!-- Pastille interactive 3 (Rouge pure, placée sous la bleue près du cœur) -->
+                <button onclick="openModal('chaste-heart')" title="Cœur très chaste" class="absolute top-[48%] right-[25%] transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-red-700 hover:bg-red-600 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
                   <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Cœur très chaste</span>
                 </button>
               </div>
@@ -193,7 +193,7 @@
 
           <!-- Modale / Panneau Superposé -->
           <div id="interactive-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 backdrop-blur-sm p-4">
-            <div class="bg-white rounded-2xl max-w-2xl w-full p-6 md:p-8 shadow-2xl border border-amber-200 relative animate-in fade-in zoom-in duration-200 max-h-[90vh] overflow-y-auto">
+            <div id="modal-container" class="bg-white rounded-2xl max-w-2xl w-full p-6 md:p-8 shadow-2xl border border-amber-200 relative animate-in fade-in zoom-in duration-200 max-h-[90vh] overflow-y-auto">
               
               <!-- Bouton de fermeture -->
               <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-2 rounded-lg text-lg font-bold">
@@ -225,7 +225,7 @@
 
   </div>
 
-  <!-- Audio API -->
+  <!-- Audio API & Interactivité -->
   <script>
     let audioCtx = null;
     let isPlayingDove = false;
@@ -301,21 +301,25 @@
 
     function openModal(type) {
       const modal = document.getElementById('interactive-modal');
+      const container = document.getElementById('modal-container');
       const content = document.getElementById('modal-content');
+      
+      // Réinitialisation de la hauteur de la modale
+      container.style.maxHeight = '90vh';
       
       if (type === 'dates') {
         content.innerHTML = `
           <div class="space-y-3">
-            <div class="w-full p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col gap-1">
-              <span class="text-xs font-bold text-amber-600 uppercase">19 Mars</span>
-              <button onclick="showPrayer('ave-joseph')" class="text-left text-sm font-semibold text-slate-800 hover:text-amber-700 underline transition cursor-pointer">
-                Saint-Joseph, époux de la bienheureuse Vierge Marie
+            <div class="w-full p-4 rounded-xl bg-blue-600/10 border border-blue-600/20 flex flex-col gap-1">
+              <span class="text-xs font-bold text-red-700 uppercase">19 Mars</span>
+              <button onclick="showPrayer('ave-joseph')" class="text-left text-sm font-semibold text-red-700 hover:text-red-800 underline transition cursor-pointer">
+                Époux de la bienheureuse Vierge Marie
               </button>
             </div>
-            <div class="w-full p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col gap-1">
-              <span class="text-xs font-bold text-amber-600 uppercase">1er Mai</span>
-              <button onclick="showPrayer('pie-x')" class="text-left text-sm font-semibold text-slate-800 hover:text-amber-700 underline transition cursor-pointer">
-                Saint-Joseph travailleur
+            <div class="w-full p-4 rounded-xl bg-blue-600/10 border border-blue-600/20 flex flex-col gap-1">
+              <span class="text-xs font-bold text-red-700 uppercase">1er Mai</span>
+              <button onclick="showPrayer('pie-x')" class="text-left text-sm font-semibold text-red-700 hover:text-red-800 underline transition cursor-pointer">
+                Travailleur
               </button>
             </div>
           </div>
@@ -330,8 +334,10 @@
           </div>
         `;
       } else if (type === 'chaste-heart') {
+        // Hauteur ajustée spécifiquement au texte
+        container.style.maxHeight = 'fit-content';
         content.innerHTML = `
-          <div class="flex flex-col items-start justify-start text-left space-y-3 py-2">
+          <div class="flex flex-col items-start justify-start text-left py-1">
             <p class="text-base font-semibold text-slate-800 w-full text-left leading-normal m-0">Je bénis le cœur très chaste de Saint Joseph.</p>
           </div>
         `;
@@ -346,13 +352,12 @@
       if (prayerKey === 'ave-joseph') {
         content.innerHTML = `
           <div class="flex items-center justify-between mb-4 pb-2">
-            <button onclick="openModal('dates')" class="text-xs font-bold text-amber-600 hover:text-amber-700 flex items-center gap-1 cursor-pointer">
+            <button onclick="openModal('dates')" class="text-xs font-bold text-red-700 hover:text-red-800 flex items-center gap-1 cursor-pointer">
               ← Retour
             </button>
-            <span class="text-xs font-bold text-amber-600 uppercase">19 Mars</span>
+            <span class="text-xs font-bold text-red-700 uppercase">19 Mars</span>
           </div>
-          <h4 class="text-lg font-bold text-slate-900 mb-3 text-center">Je vous salue Joseph ou Ave Joseph</h4>
-          <div class="text-sm text-slate-700 leading-relaxed italic bg-amber-50/50 p-4 rounded-xl border border-amber-100/60 mb-4 space-y-2">
+          <div class="text-sm text-slate-700 leading-relaxed italic bg-blue-600/10 p-4 rounded-xl border border-blue-600/20 mb-4 space-y-2">
             <p>Je vous salue, Joseph,</p>
             <p>rempli de la grâce divine ;</p>
             <p>le Sauveur a reposé dans vos bras et grandi sous vos yeux ;</p>
@@ -371,13 +376,12 @@
       } else if (prayerKey === 'pie-x') {
         content.innerHTML = `
           <div class="flex items-center justify-between mb-4 pb-2">
-            <button onclick="openModal('dates')" class="text-xs font-bold text-amber-600 hover:text-amber-700 flex items-center gap-1 cursor-pointer">
+            <button onclick="openModal('dates')" class="text-xs font-bold text-red-700 hover:text-red-800 flex items-center gap-1 cursor-pointer">
               ← Retour
             </button>
-            <span class="text-xs font-bold text-amber-600 uppercase">1er Mai</span>
+            <span class="text-xs font-bold text-red-700 uppercase">1er Mai</span>
           </div>
-          <h4 class="text-lg font-bold text-slate-900 mb-3 text-center">Prière à Saint Joseph Travailleur</h4>
-          <div class="text-sm text-slate-700 leading-relaxed italic bg-amber-50/50 p-4 rounded-xl border border-amber-100/60 mb-4 space-y-3">
+          <div class="text-sm text-slate-700 leading-relaxed italic bg-blue-600/10 p-4 rounded-xl border border-blue-600/20 mb-4 space-y-3">
             <p>Glorieux Saint Joseph, modèle de tous ceux qui sont voués au travail, obtenez-moi la grâce de travailler en esprit de pénitence pour l'expiation de mes nombreux péchés ;</p>
             <p>de travailler en conscience, remettant le soin du devoir au-dessus de mes inclinations ;</p>
             <p>de travailler avec reconnaissance et joie, regardant comme un honneur d'employer et de développer, par le travail, les dons reçus de Dieu ;</p>
