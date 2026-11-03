@@ -66,8 +66,8 @@
 
   <div id="app" class="min-h-screen flex flex-col justify-between">
     
-    <!-- En-tête Moderne : Fond bleu de la pastille bleue, texte jaune de la pastille jaune, sans aucune ligne -->
-    <header class="header-bg bg-custom-blue text-white shadow-md sticky top-0 z-50 transition-colors duration-500 border-none outline-none">
+    <!-- En-tête Fixe et Opaque en Haut (sans défilement ni superposition) -->
+    <header class="header-bg bg-custom-blue text-white shadow-md w-full border-none outline-none">
       <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col items-center justify-center gap-4 border-none">
         
         <!-- Titre de l'application centré en jaune -->
@@ -106,12 +106,12 @@
       </div>
     </header>
 
-    <!-- Layout Principal : Menu Neuvaine à gauche (verrouillé), Contenu à droite -->
+    <!-- Layout Principal : Menu Neuvaine à gauche, Contenu à droite -->
     <div class="max-w-7xl mx-auto px-4 md:px-6 py-8 flex-grow w-full flex flex-col md:flex-row gap-8 items-stretch">
       
-      <!-- Panneau Latéral Gauche : Neuvaine (Verrouillé) -->
+      <!-- Panneau Latéral Gauche : Neuvaine -->
       <aside class="w-full md:w-72 flex-shrink-0 flex flex-col">
-        <div id="neuvaine-panel" class="bg-card bg-white rounded-2xl p-6 shadow-sm transition-colors duration-500 h-full flex flex-col justify-between">
+        <div id="neuvaine-panel" class="bg-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 transition-colors duration-500 h-full flex flex-col justify-between">
           <div>
             <!-- Titre & Description alignés à gauche, sans aucune ligne -->
             <div class="mb-6 flex flex-col items-start text-left border-none outline-none">
@@ -143,7 +143,7 @@
       <!-- Zone Principale : Saint Joseph -->
       <main class="flex-grow w-full flex flex-col">
         
-        <section id="main-section" class="bg-card bg-white rounded-2xl p-6 md:p-10 shadow-sm transition-colors duration-500 relative flex flex-col justify-between h-full">
+        <section id="main-section" class="bg-card bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-slate-200/80 transition-colors duration-500 relative flex flex-col justify-between h-full">
           
           <div class="flex flex-col h-full justify-between">
             <!-- Titre centré, sans aucune ligne -->
@@ -163,14 +163,12 @@
                   class="w-full h-full object-cover rounded-xl transition-transform duration-500"
                 />
 
-                <!-- Pastille interactive 1 (Jaune pure) -->
-                <button onclick="openModal('dates')" class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-amber-500 hover:bg-amber-400 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
-                  <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Dates & Prières</span>
+                <!-- Pastille interactive 1 (Jaune pure, sans attribut title) -->
+                <button onclick="openModal('dates')" class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-amber-500 hover:bg-amber-400 shadow-lg animate-pulse transition hover:scale-110 active:scale-95">
                 </button>
 
-                <!-- Pastille interactive 2 (Bleue pure) -->
-                <button onclick="openModal('titles')" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-blue-600 hover:bg-blue-500 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
-                  <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Titres de Saint Joseph</span>
+                <!-- Pastille interactive 2 (Bleue pure, sans attribut title) -->
+                <button onclick="openModal('titles')" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-blue-600 hover:bg-blue-500 shadow-lg animate-pulse transition hover:scale-110 active:scale-95">
                 </button>
 
                 <!-- Pastille interactive 3 (Rouge pure, légèrement abaissée, sans texte au survol) -->
