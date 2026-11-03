@@ -111,7 +111,7 @@
       
       <!-- Panneau Latéral Gauche : Neuvaine (Verrouillé) -->
       <aside class="w-full md:w-72 flex-shrink-0 flex flex-col">
-        <div id="neuvaine-panel" class="bg-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 sticky top-28 transition-colors duration-500 h-full flex flex-col justify-between">
+        <div id="neuvaine-panel" class="bg-card bg-white rounded-2xl p-6 shadow-sm transition-colors duration-500 h-full flex flex-col justify-between">
           <div>
             <!-- Titre & Description alignés à gauche, sans aucune ligne -->
             <div class="mb-6 flex flex-col items-start text-left border-none outline-none">
@@ -143,7 +143,7 @@
       <!-- Zone Principale : Saint Joseph -->
       <main class="flex-grow w-full flex flex-col">
         
-        <section id="main-section" class="bg-card bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-slate-200/80 transition-colors duration-500 relative flex flex-col justify-between h-full">
+        <section id="main-section" class="bg-card bg-white rounded-2xl p-6 md:p-10 shadow-sm transition-colors duration-500 relative flex flex-col justify-between h-full">
           
           <div class="flex flex-col h-full justify-between">
             <!-- Titre centré, sans aucune ligne -->
@@ -164,12 +164,12 @@
                 />
 
                 <!-- Pastille interactive 1 (Jaune pure) -->
-                <button onclick="openModal('dates')" title="Dates de l'année" class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-amber-500 hover:bg-amber-400 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
+                <button onclick="openModal('dates')" class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-amber-500 hover:bg-amber-400 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
                   <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Dates & Prières</span>
                 </button>
 
                 <!-- Pastille interactive 2 (Bleue pure) -->
-                <button onclick="openModal('titles')" title="Titres de Saint Joseph" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-blue-600 hover:bg-blue-500 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
+                <button onclick="openModal('titles')" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-blue-600 hover:bg-blue-500 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
                   <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Titres de Saint Joseph</span>
                 </button>
 
