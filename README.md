@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Sous le manteau de Saint-Joseph</title>
+  <title>Sous le manteau de Saint Joseph</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -74,12 +74,12 @@
   <div id="app" class="min-h-screen flex flex-col justify-between">
     
     <!-- En-tête Moderne Bleu Royal & Argent Épuré -->
-    <header class="header-bg bg-royal-header text-white shadow-lg border-b border-slate-700/50 sticky top-0 z-50 transition-colors duration-500">
+    <header class="header-bg bg-royal-header text-white shadow-lg border-slate-700/50 sticky top-0 z-50 transition-colors duration-500">
       <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col items-center justify-center gap-4">
         
         <!-- Titre de l'application centré -->
         <h1 class="font-opensans-bold text-2xl md:text-3xl tracking-wide text-amber-100 text-center">
-          Sous le manteau de Saint-Joseph
+          Sous le manteau de Saint Joseph
         </h1>
 
         <!-- Controls Header centrés (SVG vectoriels natifs Android) -->
@@ -121,12 +121,12 @@
         <div id="neuvaine-panel" class="bg-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 sticky top-28 transition-colors duration-500 h-full flex flex-col justify-between">
           <div>
             <!-- Titre & Description parfaitement centrés -->
-            <div class="mb-6 border-b border-slate-100 pb-4 flex flex-col items-center text-center">
+            <div class="mb-6 border-slate-100 flex flex-col items-center text-center">
               <h2 class="font-opensans-bold text-xl text-slate-900 text-royal mb-1">
                 Neuvaine
               </h2>
               <p class="text-xs text-slate-500 font-medium italic">
-                Suivez l'avancement de votre neuvaine.
+                Suivez l'avancement de votre neuvaine :
               </p>
             </div>
 
@@ -163,7 +163,7 @@
             <!-- Conteneur de l'image -->
             <div class="halo-container max-w-md mx-auto relative flex flex-col items-center w-full flex-grow justify-center">
               
-              <div class="relative rounded-2xl overflow-hidden halo-effect border-2 border-amber-400/40 p-1 bg-slate-900 w-full flex justify-center h-full max-h-[580px]">
+              <div class="relative rounded-2xl overflow-hidden halo-effect border-amber-400/40 p-1 bg-slate-900 w-full flex justify-center h-full max-h-[580px]">
                 <img 
                   src="https://noma.org/wp-content/uploads/2018/01/56-63-old.jpg" 
                   alt="Saint Joseph et l'Enfant-Jésus" 
@@ -175,7 +175,7 @@
                 </button>
 
                 <!-- Pastille interactive 2 (Bleue pure, sans émoji et sans contour) -->
-                <button onclick="openModal('titles')" title="Titres de Saint-Joseph" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-blue-600 hover:bg-blue-500 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
+                <button onclick="openModal('titles')" title="Titres de Saint Joseph" class="absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-blue-600 hover:bg-blue-500 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
                 </button>
               </div>
               
