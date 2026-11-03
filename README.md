@@ -194,7 +194,7 @@
                 ✕
               </button>
 
-              <h3 class="font-opensans-bold text-2xl text-center text-slate-900 mb-4">
+              <h3 class="font-opensans-bold text-2xl text-left text-slate-900 mb-4">
                 Saint Joseph
               </h3>
 
@@ -314,16 +314,17 @@
             </div>
           </div>
         `;
-            } else if (type === 'titles') {
+                  } else if (type === 'titles') {
         content.innerHTML = `
-          <div class="flex flex-col items-center justify-center text-center space-y-3 py-2">
-            <p class="text-base font-semibold text-slate-800 w-full text-center leading-normal m-0">Le Juste,</p>
-            <p class="text-base font-semibold text-slate-800 w-full text-center leading-normal m-0">Travailleur,</p>
-            <p class="text-base font-semibold text-slate-800 w-full text-center leading-normal m-0">Terreur des démons,</p>
-            <p class="text-base font-semibold text-slate-800 w-full text-center leading-normal m-0">Protecteur de la Sainte Église.</p>
+          <div class="flex flex-col items-start justify-start text-left space-y-3 py-2">
+            <p class="text-base font-semibold text-slate-800 w-full text-left leading-normal m-0">Le Juste,</p>
+            <p class="text-base font-semibold text-slate-800 w-full text-left leading-normal m-0">Travailleur,</p>
+            <p class="text-base font-semibold text-slate-800 w-full text-left leading-normal m-0">Terreur des démons,</p>
+            <p class="text-base font-semibold text-slate-800 w-full text-left leading-normal m-0">Protecteur de la Sainte Église.</p>
           </div>
         `;
       }
+
 
       
       modal.classList.remove('hidden');
