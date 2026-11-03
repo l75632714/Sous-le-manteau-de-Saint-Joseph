@@ -72,7 +72,7 @@
 
   <div id="app" class="min-h-screen flex flex-col justify-between">
     
-    <!-- En-tête Moderne Bleu Royal & Argent Épuré -->
+    <!-- En-tête Moderne Bleu Royal & Argent Épuré (Ligne sous le titre supprimée) -->
     <header class="header-bg bg-royal-header text-white shadow-lg sticky top-0 z-50 transition-colors duration-500">
       <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col items-center justify-center gap-4">
         
@@ -119,7 +119,7 @@
       <aside class="w-full md:w-72 flex-shrink-0 flex flex-col">
         <div id="neuvaine-panel" class="bg-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 sticky top-28 transition-colors duration-500 h-full flex flex-col justify-between">
           <div>
-            <!-- Titre & Description alignés à gauche (avec deux points à la fin) -->
+            <!-- Titre & Description alignés à gauche (sans ligne de séparation) -->
             <div class="mb-6 flex flex-col items-start text-left">
               <h2 class="font-opensans-bold text-xl text-slate-900 text-royal mb-1">
                 Neuvaine
@@ -152,7 +152,7 @@
         <section id="main-section" class="bg-card bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-slate-200/80 transition-colors duration-500 relative flex flex-col justify-between h-full">
           
           <div class="flex flex-col h-full justify-between">
-            <!-- Titre centré -->
+            <!-- Titre centré (sans ligne de séparation) -->
             <div class="flex flex-col items-center">
               <h2 class="font-opensans-bold text-2xl md:text-4xl text-slate-900 text-royal mb-4 tracking-tight text-center">
                 Saint Joseph
@@ -179,9 +179,8 @@
                   <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Titres de Saint Joseph</span>
                 </button>
 
-                <!-- Pastille interactive 3 (Rouge pure, placée sous la bleue près du cœur) -->
-                <button onclick="openModal('chaste-heart')" title="Cœur très chaste" class="absolute top-[48%] right-[25%] transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-red-700 hover:bg-red-600 shadow-lg animate-pulse transition hover:scale-110 group active:scale-95">
-                  <span class="absolute bottom-full mb-1 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap">Cœur très chaste</span>
+                <!-- Pastille interactive 3 (Rouge pure, placée sous la bleue près du cœur, sans texte au survol) -->
+                <button onclick="openModal('chaste-heart')" class="absolute top-[48%] right-[25%] transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-red-700 hover:bg-red-600 shadow-lg animate-pulse transition hover:scale-110 active:scale-95">
                 </button>
               </div>
               
@@ -196,13 +195,9 @@
             <div id="modal-container" class="bg-white rounded-2xl max-w-2xl w-full p-6 md:p-8 shadow-2xl border border-amber-200 relative animate-in fade-in zoom-in duration-200 max-h-[90vh] overflow-y-auto">
               
               <!-- Bouton de fermeture -->
-              <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-2 rounded-lg text-lg font-bold">
+              <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-2 rounded-lg text-lg font-bold cursor-pointer">
                 ✕
               </button>
-
-              <h3 class="font-opensans-bold text-2xl text-left text-slate-900 mb-4 w-full">
-                Saint Joseph
-              </h3>
 
               <!-- Contenu dynamique interactif -->
               <div id="modal-content" class="space-y-4">
@@ -304,7 +299,7 @@
       const container = document.getElementById('modal-container');
       const content = document.getElementById('modal-content');
       
-      // Réinitialisation de la hauteur de la modale
+      // Réinitialisation de la hauteur de la modale par défaut
       container.style.maxHeight = '90vh';
       
       if (type === 'dates') {
@@ -312,13 +307,13 @@
           <div class="space-y-3">
             <div class="w-full p-4 rounded-xl bg-blue-600/10 border border-blue-600/20 flex flex-col gap-1">
               <span class="text-xs font-bold text-red-700 uppercase">19 Mars</span>
-              <button onclick="showPrayer('ave-joseph')" class="text-left text-sm font-semibold text-red-700 hover:text-red-800 underline transition cursor-pointer">
+              <button onclick="showPrayer('ave-joseph')" class="text-left text-sm font-semibold text-slate-800 hover:text-black underline transition cursor-pointer">
                 Époux de la bienheureuse Vierge Marie
               </button>
             </div>
             <div class="w-full p-4 rounded-xl bg-blue-600/10 border border-blue-600/20 flex flex-col gap-1">
               <span class="text-xs font-bold text-red-700 uppercase">1er Mai</span>
-              <button onclick="showPrayer('pie-x')" class="text-left text-sm font-semibold text-red-700 hover:text-red-800 underline transition cursor-pointer">
+              <button onclick="showPrayer('pie-x')" class="text-left text-sm font-semibold text-slate-800 hover:text-black underline transition cursor-pointer">
                 Travailleur
               </button>
             </div>
@@ -334,7 +329,7 @@
           </div>
         `;
       } else if (type === 'chaste-heart') {
-        // Hauteur ajustée spécifiquement au texte
+        // Hauteur de l'encadré réduite au plus près du texte et centrée
         container.style.maxHeight = 'fit-content';
         content.innerHTML = `
           <div class="flex flex-col items-start justify-start text-left py-1">
