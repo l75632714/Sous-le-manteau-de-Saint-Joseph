@@ -71,35 +71,26 @@
     }
   </style>
 </head>
-<body class="bg-[#f3eee4] text-slate-800 font-['Open_Sans'] min-h-screen flex flex-col bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url(ElevenLabs_image_seedream-4_Une texture dou_2026-11-03T22_07_03.jpg);"
-  class="h-full text-slate-800 bg-slate-50 transition-colors duration-500">
+<body class="bg-[#f3eee4] text-slate-800 font-['Open_Sans'] min-h-screen flex flex-col bg-cover bg-center bg-no-repeat bg-fixed transition-colors duration-500" style="background-image: url('ElevenLabs_image_seedream-4_Une texture dou_2026-11-03T22_07_03.jpg');">
 
   <div id="app" class="min-h-screen flex flex-col justify-between">
     
-    <!-- En-tête Fixe et Opaque en Haut (sans défilement ni superposition) -->
-    <header class="header-bg bg-custom-blue text-white shadow-md w-full border-0">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col items-center justify-center gap-4 border-0">
+    <!-- En-tête Fixe et Opaque avec icônes réduites en haut à gauche -->
+    <header class="header-bg bg-custom-blue text-white shadow-md w-full border-0 sticky top-0 z-40">
+      <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between border-0">
         
-        <!-- Titre de l'application centré en jaune -->
-        <h1 class="font-opensans-bold text-2xl md:text-3xl tracking-wide text-amber-400 text-center m-0 p-0 border-0">
-          Sous le manteau de Saint Joseph
-        </h1>
-
-        <!-- Controls Header centrés -->
-        <div class="flex items-center justify-center gap-3">
-          
-          <!-- Bouton Musique / Note -->
-          <button id="dove-btn" onclick="toggleDoveSound()" title="Ambiance Musicale" class="p-3 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-600/60 transition cursor-pointer flex items-center justify-center group active:scale-95">
-            <svg class="w-6 h-6 text-slate-200 group-hover:text-amber-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 18V5l12-2v13" />
-              <circle cx="6" cy="18" r="3" fill="currentColor" />
-              <circle cx="18" cy="16" r="3" fill="currentColor" />
+        <!-- Zone Gauche : Icônes repositionnées, réduites et discrètes -->
+        <div class="flex items-center space-x-2">
+          <!-- Bouton Musique (Haut-parleur) -->
+          <button id="dove-btn" onclick="toggleDoveSound()" title="Ambiance Musicale" class="p-1.5 rounded-full bg-slate-800/80 hover:bg-slate-700 text-amber-300 transition cursor-pointer flex items-center justify-center active:scale-95">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
             </svg>
           </button>
 
-          <!-- Bouton Lumière Apaisante -->
-          <button id="light-btn" onclick="toggleSoothingLight()" title="Lumière apaisante" class="p-3 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-600/60 transition cursor-pointer flex items-center justify-center group active:scale-95">
-            <svg class="w-6 h-6 text-slate-200 group-hover:text-amber-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Bouton Lumière Apaisante (Icône Soleil d'origine, réduite) -->
+          <button id="light-btn" onclick="toggleSoothingLight()" title="Lumière apaisante" class="p-1.5 rounded-full bg-slate-800/80 hover:bg-slate-700 text-amber-300 transition cursor-pointer flex items-center justify-center active:scale-95">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="4"/>
               <path d="M12 2v2"/>
               <path d="M12 20v2"/>
@@ -111,8 +102,16 @@
               <path d="m19.07 4.93-1.41 1.41"/>
             </svg>
           </button>
-
         </div>
+
+        <!-- Titre de l'application centré en jaune -->
+        <h1 class="font-opensans-bold text-lg md:text-2xl tracking-wide text-amber-400 text-center m-0 p-0 border-0 flex-1">
+          Sous le manteau de Saint Joseph
+        </h1>
+
+        <!-- Espaceur invisible à droite pour équilibrer le titre centré -->
+        <div class="w-14"></div>
+
       </div>
     </header>
 
