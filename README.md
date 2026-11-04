@@ -118,14 +118,14 @@
     <!-- Layout Principal : Menu Neuvaine à gauche, Contenu à droite -->
     <div class="max-w-7xl mx-auto px-4 md:px-6 py-8 flex-grow w-full flex flex-col md:flex-row gap-8 items-stretch">
       
-      <!-- Panneau Latéral Gauche : Neuvaine -->
+      <!-- Panneau Latéral Gauche : Neuvaine à Saint Joseph -->
       <aside class="w-full md:w-72 flex-shrink-0 flex flex-col">
         <div id="neuvaine-panel" class="bg-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 transition-colors duration-500 h-full flex flex-col justify-between">
           <div>
             <!-- Titre & Description alignés à gauche -->
             <div class="mb-6 flex flex-col items-start text-left border-0">
               <h2 class="font-opensans-bold text-xl text-slate-900 text-royal mb-1 m-0 p-0 border-0">
-                Neuvaine
+                Neuvaine à Saint Joseph
               </h2>
               <p class="text-xs text-slate-500 font-medium italic m-0 p-0 border-0">
                 Suivez l'avancement de votre neuvaine :
