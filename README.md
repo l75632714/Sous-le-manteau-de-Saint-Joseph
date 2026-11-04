@@ -71,13 +71,12 @@
     }
   </style>
 </head>
-<body class="h-full text-slate-800 bg-slate-50 transition-colors duration-500">
+<body class="bg-[#f3eee4] text-slate-800 font-['Open_Sans'] min-h-screen flex flex-col bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url(ElevenLabs_image_seedream-4_Une texture dou_2026-11-03T22_07_03.jpg);"
+  class="h-full text-slate-800 bg-slate-50 transition-colors duration-500">
 
   <div id="app" class="min-h-screen flex flex-col justify-between">
     
-    <!-- En-tête Fixe et Opaque en Haut (sans défilement ni superposition) -->
-    <header class="header-bg bg-custom-blue text-white shadow-md w-full border-0">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col items-center justify-center gap-4 border-0">
+  
         
         <!-- Titre de l'application centré en jaune -->
         <h1 class="font-opensans-bold text-2xl md:text-3xl tracking-wide text-amber-400 text-center m-0 p-0 border-0">
@@ -87,14 +86,47 @@
         <!-- Controls Header centrés -->
         <div class="flex items-center justify-center gap-3">
           
-          <!-- Bouton Musique / Note -->
-          <button id="dove-btn" onclick="toggleDoveSound()" title="Ambiance Musicale" class="p-3 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-600/60 transition cursor-pointer flex items-center justify-center group active:scale-95">
-            <svg class="w-6 h-6 text-slate-200 group-hover:text-amber-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 18V5l12-2v13" />
-              <circle cx="6" cy="18" r="3" fill="currentColor" />
-              <circle cx="18" cy="16" r="3" fill="currentColor" />
-            </svg>
-          </button>
+          <!-- En-tête avec les deux icônes en haut à gauche, réduites et discrètes -->
+<header class="bg-slate-900/90 text-white shadow-md backdrop-blur-sm sticky top-0 z-40">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+        
+        <!-- Zone Gauche : Icônes repositionnées, réduites et discrètes -->
+        <div class="flex items-center space-x-2">
+            <!-- Bouton Son (Haut-parleur) -->
+            <button onclick="toggleAudio()" id="audioBtn" class="p-1.5 rounded-full bg-slate-800 hover:bg-slate-700 text-amber-300 transition" title="Activer / Désactiver le son">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
+                </svg>
+            </button>
+            
+            <!-- Bouton Luminosité (Ton icône d'origine inchangée, taille réduite) -->
+            <button onclick="toggleNightMode()" class="p-1.5 rounded-full bg-slate-800 hover:bg-slate-700 text-amber-300 transition" title="Changer la luminosité">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Titre -->
+        <h1 class="text-lg md:text-xl font-bold text-amber-200">Sous le manteau de Saint Joseph</h1>
+
+    </div>
+</header>
+
+            
+            <!-- Bouton Luminosité (Ton icône d'origine inchangée, taille réduite) -->
+            <button onclick="toggleNightMode()" class="p-1.5 rounded-full bg-slate-800 hover:bg-slate-700 text-amber-300 transition" title="Changer la luminosité">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Titre -->
+        <h1 class="text-lg md:text-xl font-bold text-amber-200">Sous le manteau de Saint Joseph</h1>
+
+    </div>
+</header>
 
           <!-- Bouton Lumière Apaisante -->
           <button id="light-btn" onclick="toggleSoothingLight()" title="Lumière apaisante" class="p-3 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-600/60 transition cursor-pointer flex items-center justify-center group active:scale-95">
@@ -108,12 +140,8 @@
               <path d="M20 12h2"/>
               <path d="m6.34 17.66-1.41 1.41"/>
               <path d="m19.07 4.93-1.41 1.41"/>
-            </svg>
-          </button>
-
-        </div>
-      </div>
-    </header>
+            </svg>  
+          
 
     <!-- Layout Principal : Menu Neuvaine à gauche, Contenu à droite -->
     <div class="max-w-7xl mx-auto px-4 md:px-6 py-8 flex-grow w-full flex flex-col md:flex-row gap-8 items-stretch">
