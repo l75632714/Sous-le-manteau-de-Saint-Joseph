@@ -127,7 +127,7 @@
               <h2 class="font-opensans-bold text-lg text-slate-900 text-royal mb-1 m-0 p-0 border-0">
                 Neuvaine à Saint Joseph
               </h2>
-              <p class="text-xs text-slate-500 font-medium italic m-0 p-0 border-0">
+              <p class="text-xs text-slate-500 font-lg italic m-0 p-0 border-0">
                 Suivez l'avancement de votre neuvaine :
               </p>
             </div>
