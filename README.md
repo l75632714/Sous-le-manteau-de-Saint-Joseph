@@ -75,8 +75,8 @@
 
   <div id="app" class="min-h-screen flex flex-col justify-between">
     
-    <!-- En-tête Fixe et Opaque avec icônes réduites en haut à gauche -->
-    <header class="header-bg bg-custom-blue text-white shadow-md w-full border-0 sticky top-0 z-40">
+    <!-- En-tête Fixe en haut de page (non collant) -->
+    <header class="header-bg bg-custom-blue text-white shadow-md w-full border-0">
       <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between border-0">
         
         <!-- Zone Gauche : Icônes repositionnées, réduites et discrètes -->
