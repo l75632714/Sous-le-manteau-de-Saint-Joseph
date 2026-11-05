@@ -122,12 +122,12 @@
       <aside class="w-full md:w-72 flex-shrink-0 flex flex-col">
         <div id="neuvaine-panel" class="bg-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 transition-colors duration-500 h-full flex flex-col justify-between">
           <div>
-            <!-- Titre & Description alignés à gauche -->
+            <!-- Titre & Description alignés à gauche (Modifié en text-lg) -->
             <div class="mb-6 flex flex-col items-start text-left border-0">
               <h2 class="font-opensans-bold text-lg text-slate-900 text-royal mb-1 m-0 p-0 border-0">
                 Neuvaine à Saint Joseph
               </h2>
-              <p class="text-xs text-slate-500 font-lg italic m-0 p-0 border-0">
+              <p class="text-xs text-slate-500 italic m-0 p-0 border-0">
                 Suivez l'avancement de votre neuvaine :
               </p>
             </div>
@@ -355,7 +355,6 @@
             <span class="text-xs font-bold text-red-700 uppercase">19 Mars</span>
           </div>
           <div class="text-sm text-slate-700 leading-relaxed italic bg-blue-600/10 p-4 rounded-xl border border-blue-600/20 mb-4 space-y-2">
-        
             <p>Je vous salue Joseph,</p>
             <p>vous que la grâce divine a comblé;</p>
             <p>le Sauveur a reposé dans vos bras et grandi sous vos yeux.;</p>
@@ -368,7 +367,7 @@
             <p>Amen.</p>
           </div>
           <div class="text-[11px] text-slate-400 border-t border-slate-100 pt-3 text-center">
-            <p><strong>https://Source : nd-de-graces.com/wp-content/uploads/2021/02/Prieres-a-saint-Joseph.pdf</p>
+            <p><strong>Source :</strong> nd-de-graces.com</p>
           </div>
         `;
       } else if (prayerKey === 'pie-x') {
@@ -389,8 +388,8 @@
             <p>Tout pour Jésus, tout pour Marie, tout à votre imitation, patriarche Joseph ! telle sera ma devise à la vie à la mort. Ainsi soit-il</p>
           </div>
           <div class="text-[11px] text-slate-400 border-t border-slate-100 pt-3 text-center">
-            <p><strong>Prière de saint Pie X au glorieux Saint Joseph, modèle des travailleurs</p>
-            <p><strong>Source :</strong>https://laportelatine.org/spiritualite/prieres-et-devotions/prieres-a-saint-joseph</p>
+            <p><strong>Prière de saint Pie X au glorieux Saint Joseph, modèle des travailleurs</strong></p>
+            <p><strong>Source :</strong> laportelatine.org</p>
           </div>
         `;
       }
