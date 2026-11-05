@@ -124,7 +124,7 @@
           <div>
             <!-- Titre & Description alignés à gauche (Modifié en text-lg) -->
             <div class="mb-6 flex flex-col items-start text-left border-0">
-              <h2 class="font-opensans-bold text-lg text-slate-900 text-royal mb-1 m-0 p-0 border-0 whitespace-nowrap">
+              <h2 class="font-opensans-bold text-sm text-slate-900 text-royal mb-1 m-0 p-0 border-0 whitespace-nowrap">
                 Neuvaine à Saint Joseph
               </h2>
               <p class="text-xs text-slate-500 italic m-0 p-0 border-0">
