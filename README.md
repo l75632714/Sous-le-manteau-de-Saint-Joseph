@@ -76,9 +76,8 @@
   <div id="app" class="min-h-screen flex flex-col justify-between">
     
 <!-- SECONDE ILLUSTRATION -->
-<section class="relative w-full bg-slate-800 rounded-2xl border border-slate-700 shadow-xl overflow-hidden p-4 space-y-3">
-  <h2 class="text-md font-semibold text-amber-400">Titre de l'illustration</h2>
-  <div class="relative w-full bg-black touch-none">
+<section class="relative w-full bg-slate-800 rounded-2xl border border-slate-700 shadow-xl overflow-hidden p-4 space-y-3"> 
+<div class="relative w-full bg-black touch-none">
 <img src="sketch1793913958083.png" alt="sketch1793913958083.png" class="absolute top-4 left-4 w-full h-auto rounded-xl shadow-lg" select-none z-10">
   </div>
 </section>
