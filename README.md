@@ -428,4 +428,8 @@
 
     function closeModal() {
       const modal = document.getElementById('interactive-modal');
-      m
+      modal.classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
