@@ -185,7 +185,11 @@
                 <button onclick="openModal('chaste-heart')" class="absolute top-[52%] right-[25%] transform translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-red-700 hover:bg-red-600 shadow-lg animate-pulse transition hover:scale-110 active:scale-95">
                 </button>
               </div>
-              
+
+              <!-- Pastille interactive 4 (Vert émeraude - BibleWalks Nazareth Maps) -->
+<button onclick="window.open('https://www.biblewalks.com/nazareth_maps/', '_blank')" title="Cartes et sites de Nazareth (BibleWalks)" class="absolute top-[65%] left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-emerald-600 hover:bg-emerald-500 shadow-lg animate-pulse transition hover:scale-110 active:scale-95 cursor-pointer">
+</button>
+
               <p class="text-[11px] text-slate-400 mt-2 italic text-center">
                 Source : Object Lesson: St. Joseph and the Christ Child — NOMA
               </p>
