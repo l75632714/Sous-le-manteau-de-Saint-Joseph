@@ -74,12 +74,12 @@
 <body class="bg-[#f3eee4] text-slate-800 font-['Open_Sans'] min-h-screen flex flex-col bg-cover bg-center bg-no-repeat bg-fixed transition-colors duration-500" style="background-image: url('ElevenLabs_image_seedream-4_Une texture dou_2026-11-03T22_07_03.jpg');">
 
   <div id="app" class="min-h-screen flex flex-col justify-between">
-
-  <!-- SECONDE ILLUSTRATION -->
+    
+<!-- SECONDE ILLUSTRATION -->
 <section class="relative w-full bg-slate-800 rounded-2xl border border-slate-700 shadow-xl overflow-hidden p-4 space-y-3">
   <h2 class="text-md font-semibold text-amber-400">Titre de l'illustration</h2>
   <div class="relative w-full bg-black touch-none">
-<img src="sketch1793913958083.png" alt="sketch1793913958083.png" class=absolute top-4 lft-4 w-full h-auto rounded-xl shadow-lg" select-none z-10>
+<img src="sketch1793913958083.png" alt="sketch1793913958083.png" class="absolute top-4 left-4 w-full h-auto rounded-xl shadow-lg" select-none z-10">
   </div>
 </section>
     
