@@ -214,6 +214,31 @@
       </main>
 
     </div>
+<!-- Bloc superposé Nazareth -->
+<div class="relative z-10 -mb-6 flex justify-center px-4">
+  <div class="inline-flex items-center gap-4 rounded-xl border border-amber-200/60 bg-white/95 px-6 py-3 shadow-md backdrop-blur-sm text-lg font-opensans-bold text-slate-800">
+    <span class="text-slate-500 font-normal">Nazareth :</span>
+    <a 
+      href="https://artsandculture.google.com/entity/nazareth/m05fz3?hl=fr" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="hover:text-amber-700 hover:underline transition-colors focus:outline-none focus:ring-2 focus:ring-amber-500 rounded"
+      aria-label="Découvrir la fiche Nazareth sur Google Arts & Culture (s'ouvre dans un nouvel onglet)"
+    >
+      Découvrir
+    </a>
+    <span class="text-slate-300" aria-hidden="true">•</span>
+    <a 
+      href="https://artsandculture.google.com/search?q=Nazareth&hl=fr" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="hover:text-amber-700 hover:underline transition-colors focus:outline-none focus:ring-2 focus:ring-amber-500 rounded"
+      aria-label="Explorer la galerie d'images Nazareth sur Google Arts & Culture (s'ouvre dans un nouvel onglet)"
+    >
+      Galerie
+    </a>
+  </div>
+</div>
 
     <!-- Pied de Page Épuré - Centré -->
     <footer class="w-full text-center py-6 text-xs text-slate-400 border-t border-slate-200/60 bg-white">
@@ -357,10 +382,10 @@
           </div>
           <div class="text-sm text-slate-700 leading-relaxed italic bg-blue-600/10 p-4 rounded-xl border border-blue-600/20 mb-4 space-y-2">
             <p>Je vous salue Joseph,</p>
-            <p>vous que la grâce divine a comblé;</p>
-            <p>le Sauveur a reposé dans vos bras et grandi sous vos yeux.;</p>
+            <p>Vous que la grâce divine a comblé ;</p>
+            <p>le Sauveur a reposé dans vos bras et grandi sous vos yeux. ;</p>
             <p>Vous êtes béni entre tous les hommes et Jésus,</p>
-            <p>l’Enfant divin de votre virginale Épouse est béni. </p>
+            <p>l’Enfant divin de votre virginale Épouse est béni.</p>
             <p>Saint Joseph, donné pour père au Fils de Dieu,</p>
             <p>priez pour nous dans nos soucis de famille,</p>
             <p>de santé et de travail, jusqu’à nos derniers jours,</p>
