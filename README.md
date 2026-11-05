@@ -105,7 +105,7 @@
         </div>
 
         <!-- Titre de l'application centré en jaune -->
-        <h1 class="font-opensans-bold text-lg md:text-2xl tracking-wide text-amber-400 text-center m-0 p-0 border-0 flex-1">
+        <h1 class="B612 Mono-Regular 400 text-lg md:text-2xl tracking-wide text-amber-400 text-center m-0 p-0 border-0 flex-1">
           Sous le manteau de Saint Joseph
         </h1>
 
